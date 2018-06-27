@@ -15,7 +15,8 @@ type nn struct {
 	g      *ExprGraph
 	w0, w1 *Node
 
-	pred *Node
+	pred    *Node
+	predVal Value
 }
 
 func newNN(g *ExprGraph) *nn {
@@ -49,10 +50,10 @@ func (m *nn) fwd(x *Node) (err error) {
 
 	// Build hidden layer out of result
 	l1 = Must(Sigmoid(l0dot))
-	// fmt.Println("l1: \n", l1.Value())
 
 	m.pred = l1
-	return
+	Read(m.pred, &m.predVal)
+	return nil
 
 }
 
@@ -85,35 +86,31 @@ func main() {
 	)
 
 	// Run forward pass
-	if err = m.fwd(x); err != nil {
+	if err := m.fwd(x); err != nil {
 		log.Fatalf("%+v", err)
 	}
 
-	// Calculate Cost
+	// Calculate Cost w/MSE
 	losses := Must(Sub(y, m.pred))
-	cost := Must(Mean(losses))
+	square := Must(Square(losses))
+	cost := Must(Mean(square))
 
 	// Do Gradient updates
 	if _, err = Grad(cost, m.learnables()...); err != nil {
 		log.Fatal(err)
 	}
 
-	// Track costs
-	var costVal Value
-	Read(cost, &costVal)
-
 	// Instantiate VM and Solver
 	vm := NewTapeMachine(g, BindDualValues(m.learnables()...))
-	solver := NewVanillaSolver(WithLearnRate(0.001), WithClip(5))
-	// solver := NewRMSPropSolver()
+	solver := NewVanillaSolver(WithLearnRate(1.0))
 
 	for i := 0; i < 10000; i++ {
 		vm.Reset()
 		if err = vm.RunAll(); err != nil {
 			log.Fatalf("Failed at inter  %d: %v", i, err)
 		}
-
+		solver.Step(NodesToValueGrads(m.learnables()))
 		vm.Reset()
 	}
-	fmt.Println("Output after Training: \n", m.pred.Value())
+	fmt.Println("\n\nOutput after Training: \n", m.predVal)
 }
