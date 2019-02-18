@@ -102,11 +102,18 @@ func main() {
 
 	// Instantiate VM and Solver
 	vm := NewTapeMachine(g, BindDualValues(m.learnables()...))
+<<<<<<< HEAD
         //defer vm.Close()
 	solver := NewVanillaSolver(WithLearnRate(1.0))
 
 	for i := 0; i < 10000; i++ {
 	//	vm.Reset()
+=======
+	solver := NewVanillaSolver(WithLearnRate(1.0))
+
+	for i := 0; i < 10000; i++ {
+		vm.Reset()
+>>>>>>> 61a2ad0f7f03685ab1517209a3abf4072f93a0af
 		if err = vm.RunAll(); err != nil {
 			log.Fatalf("Failed at inter  %d: %v", i, err)
 		}
