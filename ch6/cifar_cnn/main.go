@@ -19,7 +19,8 @@ import (
 
 	"time"
 
-	"cifar_cnn/cifar"
+	// "cifar_cnn/cifar"
+	"./cifar"
 
 	"gopkg.in/cheggaaa/pb.v1"
 )
