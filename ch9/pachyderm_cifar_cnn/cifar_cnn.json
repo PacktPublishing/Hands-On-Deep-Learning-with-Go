@@ -1,0 +1,23 @@
+{
+  "pipeline": {
+    "name": "model"
+  },
+  "transform": {
+    "image": "pachyderm/cifar_cnn_train:master",
+    "cmd": [
+	"cifar_cnn_train",
+	"/pfs/images/cifar-10.csv",
+	"/pfs/out/model.bin"
+    ]
+  },
+  "parallelism_spec": {
+    "constant": "1"
+  },
+  "input": {
+    "pfs": {
+      "repo": "images",
+      "glob": "/"
+    }
+  }
+}
+
