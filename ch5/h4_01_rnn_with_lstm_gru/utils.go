@@ -31,7 +31,7 @@ func sample(val gorgonia.Value) int {
 	return indT.ScalarValue().(int)
 }
 
-func shuffle(a []trainingPair) {
+func shuffle(a []string) {
 	for i := len(a) - 1; i > 0; i-- {
 		j := rand.Intn(i + 1)
 		a[i], a[j] = a[j], a[i]

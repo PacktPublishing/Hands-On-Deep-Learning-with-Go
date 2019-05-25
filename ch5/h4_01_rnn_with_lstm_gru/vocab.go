@@ -7,11 +7,13 @@ import (
 
 const START rune = 0x02
 const END rune = 0x03
+const BLANK rune = 0x04
 
 // vocab related
 var sentences []string
 var vocab []rune
 var vocabIndex map[rune]int
+var maxsent int
 
 func initVocab(ss []string, thresh int) {
 	s := strings.Join(ss, " ")
@@ -22,6 +24,8 @@ func initVocab(ss []string, thresh int) {
 	}
 
 	vocab = append(vocab, START)
+	vocab = append(vocab, END)
+	vocab = append(vocab, BLANK)
 	vocabIndex = make(map[rune]int)
 
 	for ch, c := range dict {
@@ -31,11 +35,13 @@ func initVocab(ss []string, thresh int) {
 		}
 	}
 
-	vocab = append(vocab, END)
-
 	for i, v := range vocab {
-		vocabIndex[v] = i
+		vocabIndex[v] = i + 3
 	}
+	vocabIndex[START] = 0
+	vocabIndex[END] = 1
+	vocabIndex[BLANK] = 2
+
 	fmt.Println("Vocab: ", vocab)
 	inputSize = len(vocab)
 	outputSize = len(vocab)
@@ -47,11 +53,14 @@ func initVocab(ss []string, thresh int) {
 
 func init() {
 	sentencesRaw := strings.Split(corpus, "\n")
-	// fmt.Printf("Type of raw: %T\n\n", sentencesRaw)
+
 	for _, s := range sentencesRaw {
 		s2 := strings.TrimSpace(s)
 		if s2 != "" {
 			sentences = append(sentences, s2)
+		}
+		if len([]rune(s2)) >= maxsent {
+			maxsent = len(s2)
 		}
 	}
 
