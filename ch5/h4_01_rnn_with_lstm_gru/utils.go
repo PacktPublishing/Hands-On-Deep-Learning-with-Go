@@ -7,14 +7,17 @@ import (
 	"gorgonia.org/tensor"
 )
 
-func sample(val gorgonia.Value) int {
-	// var t tensor.Tensor
-	// var ok bool
-	// if t, ok = val.(tensor.Tensor); !ok {
-	// 	panic("Expects a tensor")
-	// }
+func sampleT(val gorgonia.Value) int {
+	var t tensor.Tensor
+	var ok bool
+	if t, ok = val.(tensor.Tensor); !ok {
+		panic("Expects a tensor")
+	}
 
-	// return tensor.SampleIndex(t)
+	return tensor.SampleIndex(t)
+}
+
+func sample(val gorgonia.Value) int {
 
 	var t tensor.Tensor
 	var ok bool

@@ -3,10 +3,17 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io/ioutil"
+	"log"
+	"os"
+	"runtime/pprof"
 
 	. "gorgonia.org/gorgonia"
 	"gorgonia.org/tensor"
 )
+
+var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to file")
+var memprofile = flag.String("memprofile", "", "write memory profile to this file")
 
 // TODO/Questions:
 
@@ -28,7 +35,7 @@ import (
 
 const (
 	embeddingSize = 20
-	maxOut        = 11
+	maxOut        = 30
 
 	// gradient update stuff
 	l2reg     = 0.000001
@@ -45,10 +52,19 @@ var inputSize = -1
 var outputSize = -1
 
 // const corpus string = "shakespeare.txt"
-const corpus string = `the cat sat on the mat
-hello world
-wild stalyns
-`
+// const corpus string = `the cat sat on the mat
+// hello world
+// wild stalyns
+
+var corpus string
+
+func init() {
+	buf, err := ioutil.ReadFile("shakespeare.txt")
+	if err != nil {
+		panic(err)
+	}
+	corpus = string(buf)
+}
 
 var dt tensor.Dtype = tensor.Float32
 
@@ -68,13 +84,38 @@ var dt tensor.Dtype = tensor.Float32
 
 func main() {
 	flag.Parse()
+	if *cpuprofile != "" {
+		f, err := os.Create(*cpuprofile)
+		if err != nil {
+			log.Fatal(err)
+		}
+		pprof.StartCPUProfile(f)
+		defer pprof.StopCPUProfile()
+	}
+	// f, err := os.Create("trace.out")
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// defer f.Close()
+
+	// err = trace.Start(f)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// defer trace.Stop()
 
 	hiddenSize := 100
 
 	s2s := NewS2S(hiddenSize, embeddingSize, vocab)
-	solver := NewRMSPropSolver(WithLearnRate(learnrate), WithL2Reg(l2reg), WithClip(clipVal))
+	solver := NewRMSPropSolver(WithLearnRate(learnrate), WithL2Reg(l2reg), WithClip(clipVal), WithBatchSize(float64(len(sentences))))
+	for k, v := range vocabIndex {
+		log.Printf("%q %v", k, v)
+	}
 
-	if err := train(s2s, 50, solver, sentences); err != nil {
+	p, h, w, err := Heatmap(s2s.decoder.Value().(*tensor.Dense))
+	p.Save(w, h, "embn0.png")
+
+	if err := train(s2s, 300, solver, sentences); err != nil {
 		panic(err)
 	}
 	out, err := s2s.predict([]rune(corpus))
@@ -82,4 +123,7 @@ func main() {
 		panic(err)
 	}
 	fmt.Printf("OUT %q\n", out)
+
+	p, h, w, err = Heatmap(s2s.decoder.Value().(*tensor.Dense))
+	p.Save(w, h, "embn.png")
 }

@@ -13,7 +13,7 @@ const BLANK rune = 0x04
 var sentences []string
 var vocab []rune
 var vocabIndex map[rune]int
-var maxsent int
+var maxsent int = 30
 
 func initVocab(ss []string, thresh int) {
 	s := strings.Join(ss, " ")
@@ -36,11 +36,11 @@ func initVocab(ss []string, thresh int) {
 	}
 
 	for i, v := range vocab {
-		vocabIndex[v] = i + 3
+		vocabIndex[v] = i
 	}
-	vocabIndex[START] = 0
-	vocabIndex[END] = 1
-	vocabIndex[BLANK] = 2
+	// vocabIndex[START] = 0
+	// vocabIndex[END] = 1
+	// vocabIndex[BLANK] = 2
 
 	fmt.Println("Vocab: ", vocab)
 	inputSize = len(vocab)
@@ -49,6 +49,7 @@ func initVocab(ss []string, thresh int) {
 	fmt.Println("\ninputs :", inputSize)
 	fmt.Println("\noutputs :", outputSize)
 	fmt.Println("\nepochs: :", epochSize)
+	fmt.Println("\nmaxsent: :", maxsent)
 }
 
 func init() {
@@ -59,9 +60,7 @@ func init() {
 		if s2 != "" {
 			sentences = append(sentences, s2)
 		}
-		if len([]rune(s2)) >= maxsent {
-			maxsent = len(s2)
-		}
+
 	}
 
 	initVocab(sentences, 1)
