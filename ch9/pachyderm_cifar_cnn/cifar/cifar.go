@@ -36,15 +36,15 @@ func Load(typ, loc string) (inputs, targets tensor.Tensor, err error) {
 	switch typ {
 	case "train":
 		arrayFiles = []string{
-			"data_batch_1.bin",
-			"data_batch_2.bin",
-			"data_batch_3.bin",
-			"data_batch_4.bin",
-			"data_batch_5.bin",
+			"train/data_batch_1.bin",
+			"train/data_batch_2.bin",
+			"train/data_batch_3.bin",
+			"train/data_batch_4.bin",
+			"train/data_batch_5.bin",
 		}
 	case "test":
 		arrayFiles = []string{
-			"test_batch.bin",
+			"test/test_batch.bin",
 		}
 	}
 

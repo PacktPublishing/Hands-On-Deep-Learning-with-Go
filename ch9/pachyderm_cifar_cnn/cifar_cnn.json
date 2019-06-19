@@ -1,21 +1,20 @@
 {
-  "pipeline": {
-    "name": "model"
+ "pipeline": {
+    "name": "cifarcnn"
   },
   "transform": {
-    "image": "pachyderm/cifar_cnn_train:master",
+    "image": "cifarcnn:latest",
     "cmd": [
-	"cifar_cnn_train",
-	"/pfs/images/cifar-10.csv",
-	"/pfs/out/model.bin"
+	"go run main.go"
     ]
   },
+  "enable_stats": true,
   "parallelism_spec": {
     "constant": "1"
   },
   "input": {
     "pfs": {
-      "repo": "images",
+      "repo": "data",
       "glob": "/"
     }
   }

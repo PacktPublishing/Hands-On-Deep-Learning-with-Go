@@ -1,9 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"math/rand"
 	"os"
@@ -26,14 +27,17 @@ import (
 )
 
 var (
-	epochs     = flag.Int("epochs", 10, "Number of epochs to train for")
-	dataset    = flag.String("dataset", "train", "Which dataset to train on? Valid options are \"train\" or \"test\"")
+	epochs  = flag.Int("epochs", 1, "Number of epochs to train for")
+	dataset = flag.String("dataset", "train", "Which dataset to train on? Valid options are \"train\" or \"test\"")
+	// loc        = flag.String("path", "/pfs/data",
 	dtype      = flag.String("dtype", "float64", "Which dtype to use")
 	batchsize  = flag.Int("batchsize", 100, "Batch size")
 	cpuprofile = flag.String("cpuprofile", "", "CPU profiling")
 )
 
 const loc = "./data/"
+
+// const loc = "/pfs/data/train" // Path for Pachyderm data mapping inside container
 
 var dt tensor.Dtype
 
@@ -88,6 +92,24 @@ func newConvNet(g *gorgonia.ExprGraph) *convnet {
 
 func (m *convnet) learnables() gorgonia.Nodes {
 	return gorgonia.Nodes{m.w0, m.w1, m.w2, m.w3, m.w4}
+}
+
+func (m *convnet) savemodel() (err error) {
+	learnables := m.learnables()
+	var f io.WriteCloser
+	if f, err = os.OpenFile("model.bin", os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0644); err != nil {
+		return
+	}
+	defer f.Close()
+	enc := json.NewEncoder(f)
+	for _, l := range learnables {
+		t := l.Value().(*tensor.Dense).Data() // []float32
+		if err = enc.Encode(t); err != nil {
+			return
+		}
+	}
+
+	return nil
 }
 
 // This function is particularly verbose for educational reasons. In reality, you'd wrap up the layers within a layer struct type and perform per-layer activations
@@ -150,7 +172,7 @@ func (m *convnet) fwd(x *gorgonia.Node) (err error) {
 		return errors.Wrap(err, "Unable to apply a dropout on layer 2")
 	}
 
-	ioutil.WriteFile("tmp.dot", []byte(m.g.ToDot()), 0644)
+	// ioutil.WriteFile("tmp.dot", []byte(m.g.ToDot()), 0644)
 
 	// Layer 3
 	log.Printf("l2 shape %v", l2.Shape())
@@ -225,7 +247,7 @@ func main() {
 	}
 
 	// debug
-	ioutil.WriteFile("fullGraph.dot", []byte(g.ToDot()), 0644)
+	// ioutil.WriteFile("fullGraph.dot", []byte(g.ToDot()), 0644)
 	// log.Printf("%v", prog)
 	// logger := log.New(os.Stderr, "", 0)
 	// vm := gorgonia.NewTapeMachine(g, gorgonia.BindDualValues(m.learnables()...), gorgonia.WithLogger(logger), gorgonia.WithWatchlist())
@@ -434,6 +456,9 @@ func main() {
 
 			vm.Reset()
 			bar.Increment()
+		}
+		if err = m.savemodel(); err != nil {
+			return
 		}
 		log.Printf("Epoch Test | cost %v", costVal)
 
