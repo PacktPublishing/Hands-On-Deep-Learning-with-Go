@@ -1,15 +1,22 @@
 # Hands-On Deep Learning with Go 
 
-<a href="https://www.packtpub.com/in/big-data-and-business-intelligence/hands-deep-learning-go?utm_source=github&utm_medium=repository&utm_campaign="><img src="" alt="Hands-On Deep Learning with Go " height="256px" align="right"></a>
+<a href="https://www.packtpub.com/in/big-data-and-business-intelligence/hands-deep-learning-go?utm_source=github&utm_medium=repository&utm_campaign="><img src="https://www.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/9/7/9781789340990-original.jpeg" alt="Hands-On Deep Learning with Go " height="256px" align="right"></a>
 
-This is the code repository for [Hands-On Deep Learning with Go ](https://www.packtpub.com/in/big-data-and-business-intelligence/hands-deep-learning-go?utm_source=github&utm_medium=repository&utm_campaign=), published by Packt.
+This is the code repository for [Hands-On Deep Learning with Go](https://www.packtpub.com/in/big-data-and-business-intelligence/hands-deep-learning-go?utm_source=github&utm_medium=repository&utm_campaign=), published by Packt.
 
 **A practical approach to building neural network models using PyTorch.**
 
 ## What is this book about?
-0
+The Go ecosystem comprises some really powerful Deep Learning tools. This book shows you how to use these tools to train and deploy scalable Deep Learning models. You will explore a number of modern Neural Network architectures such as CNNs, RNNs, and more. By the end, you will be able to train your own Deep Learning models from scratch, using the power of Go.	
 
 This book covers the following exciting features:
+
+* Explore the Go ecosystem of libraries and communities for deep learning
+* Get to grips with Neural Networks, their history, and how they work
+* Design and implement Deep Neural Networks in Go
+* Get a strong foundation of concepts such as Backpropagation and Momentum
+* Build Variational Autoencoders and Restricted Boltzmann Machines using Go
+* Build models with CUDA and benchmark CPU and GPU models
 
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1789340993) today!
@@ -43,10 +50,7 @@ With the following software and hardware list you can run all code files present
 | 4,6 | NVIDIA GPU that supports CUDA | Windows, Mac OS X, and Linux (Any) |
 | 9 | Docker | Windows, Mac OS X, and Linux (Any) |
 | 10 | AWS Account, Kubernetes/Docker/kops, Pachyderm | Windows, Mac OS X, and Linux (Any) |
-|  |  | Windows, Mac OS X, and Linux (Any) |
-|  |  | Windows, Mac OS X, and Linux (Any) |
-|  |  | Windows, Mac OS X, and Linux (Any) |
-|  |  | Windows, Mac OS X, and Linux (Any) |
+
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781789340990_ColorImages.pdf).
 
@@ -55,36 +59,13 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
 * Deep Learning with PyTorch  [[Packt]](https://www.packtpub.com/big-data-and-business-intelligence/deep-learning-pytorch?utm_source=github&utm_medium=repository&utm_campaign=) [[Amazon]](https://www.amazon.com/dp/1788624335)
 
-*  [[Packt]]() [[Amazon]](https://www.amazon.com/dp/)
 
-*  [[Packt]]() [[Amazon]](https://www.amazon.com/dp/)
+## Get to Know the Authors
+**Gareth Seneque** is a machine learning engineer with 11 years' experience of building and deploying systems at scale in the finance and media industries. He became interested in deep learning in 2014 and is currently building a search platform within his organization, using neuro-linguistic programming and other machine learning techniques to generate content metadata and drive recommendations. He has contributed to a number of open source projects, including CoREBench and Gorgonia. He also has extensive experience with modern DevOps practices, using AWS, Docker, and Kubernetes to effectively distribute the processing of machine learning workloads.
 
-## Get to Know the Author
-**Gareth Seneque**
-Gareth Seneque is a machine learning engineer with 11 years' experience of building and deploying systems at scale in the finance and media industries. He became interested in deep learning in 2014 and is currently building a search platform within his organization, using neuro-linguistic programming and other machine learning techniques to generate content metadata and drive recommendations. He has contributed to a number of open source projects, including CoREBench and Gorgonia. He also has extensive experience with modern DevOps practices, using AWS, Docker, and Kubernetes to effectively distribute the processing of machine learning workloads.
+**Darrell Chua** is a senior data scientist with more than 10 years' experience. He has developed models of varying complexity, from building credit scorecards with logistic regression to creating image classification models for trading cards. He has spent the majority of his time working with in fintech companies, trying to bring machine learning technologies into the world of finance. He has been programming in Go for several years and has been working on deep learning models for even longer. Among his achievements is the creation of numerous business intelligence and data science pipelines that enable the delivery of a top-of-the-line automated underwriting system, producing near-instant approval decisions.
 
-**Darrell Chua**
-Darrell Chua is a senior data scientist with more than 10 years' experience. He has developed models of varying complexity, from building credit scorecards with logistic regression to creating image classification models for trading cards. He has spent the majority of his time working with in fintech companies, trying to bring machine learning technologies into the world of finance. He has been programming in Go for several years and has been working on deep learning models for even longer. Among his achievements is the creation of numerous business intelligence and data science pipelines that enable the delivery of a top-of-the-line automated underwriting system, producing near-instant approval decisions.
 
-****
-0
-
-****
-0
-
-****
-0
-
-## Other books by the authors
-[]()
-
-[]()
-
-[]()
-
-[]()
-
-[]()
 
 ### Suggestions and Feedback
 [Click here](https://docs.google.com/forms/d/e/1FAIpQLSdy7dATC6QmEL81FIUuymZ0Wy9vH1jHkvpY57OiMeKGqib_Ow/viewform) if you have any feedback or suggestions.
