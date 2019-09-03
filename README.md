@@ -4,7 +4,7 @@
 
 This is the code repository for [Hands-On Deep Learning with Go](https://www.packtpub.com/in/big-data-and-business-intelligence/hands-deep-learning-go?utm_source=github&utm_medium=repository&utm_campaign=), published by Packt.
 
-**A practical approach to building neural network models using PyTorch.**
+**A practical approach to building neural network models using Gorgonia.**
 
 ## What is this book about?
 The Go ecosystem comprises some really powerful Deep Learning tools. This book shows you how to use these tools to train and deploy scalable Deep Learning models. You will explore a number of modern Neural Network architectures such as CNNs, RNNs, and more. By the end, you will be able to train your own Deep Learning models from scratch, using the power of Go.	
