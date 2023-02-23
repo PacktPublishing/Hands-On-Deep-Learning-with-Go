@@ -1,6 +1,6 @@
 # Pengenalan AI
 
-Menjelaskan :
+Terori Menjelaskan :
 * Definisi Kecerdasan Buatan
 * Training
 * Kalkulus Predikat dan Preposisi
@@ -11,12 +11,8 @@ Menjelaskan :
 * Layer, Label, Supervised dan Unsupervised
 * Machine Learning, Deep Learning
 
-## Kecerdasan Buatan
-* Cerdas 
-* Buatan
+## gorgonia.org
 
-## Kalkulus Predikat dan Preposisi
+Pada bagian ini dikenalkan gorgonia.org sebuah lirary 
 
-## Himpunan
-
-## Persamaan Garis Linier
+* Buka gorgonia.org
