@@ -19,6 +19,6 @@ Pada bagian ini dikenalkan gorgonia.org sebuah lirary. hello word : https://gorg
 3. Eksekusi graph komputasi
 
 Graph adalah fungsi yang mengelola semua variabel. Variabel di deep learning dikenal dengan Tensor. Jenis jenis tensor terlihat pada gambar berikut.
-![image](https://user-images.githubusercontent.com/11188109/221062920-28c0ac66-f2e8-421f-b3b4-11e12df4d1f8.png)
+![image](https://user-images.githubusercontent.com/11188109/221063068-f3b97fe7-8482-4001-b072-5abf494ea7e9.png)
 
 
