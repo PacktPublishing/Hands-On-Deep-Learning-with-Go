@@ -29,4 +29,12 @@ hello word : https://gorgonia.org/tutorials/hello-world/
 1. Buat kode program fungsi : c = a + b
 2. Buat kode program fungsi z = Wx dimana W adalah matriks n kali n. x adalah vektor ukuran n. dengan n = 2.1957
 3. Buat kode program fungsi z = Wx + b
-4. 
+
+## Kerjakan
+1. Buat kode program persamaan garis dengan gorgonia simpan di folder Chapter01/KELAS/NPM
+2. Pull request dengan menggunakan judul : 1-KELAS-NPM-NAMA
+3. Lampirkan juga sertifikat dari :
+   * https://www.mygreatlearning.com/academy/learn-for-free/courses/go-programming-language
+   * https://www.mindluster.com/certificate/3394
+   * https://www.codecademy.com/learn/learn-go
+   * https://www.coursera.org/specializations/google-golang
