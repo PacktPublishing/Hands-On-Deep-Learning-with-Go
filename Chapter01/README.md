@@ -13,6 +13,7 @@ Terori Menjelaskan :
 
 ## gorgonia.org
 
-Pada bagian ini dikenalkan gorgonia.org sebuah lirary 
+Pada bagian ini dikenalkan gorgonia.org sebuah lirary. 
+* hello word : https://gorgonia.org/tutorials/hello-world/
 
 * Buka gorgonia.org
