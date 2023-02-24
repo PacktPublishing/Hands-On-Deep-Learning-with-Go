@@ -22,7 +22,11 @@ Pada bagian ini dikenalkan gorgonia.org. Gorgonia mememrlukan 3 langkah pengerja
 Graph adalah fungsi yang mengelola semua variabel. Variabel di deep learning dikenal dengan Tensor. Jenis jenis tensor terlihat pada gambar berikut.
 ![image](https://user-images.githubusercontent.com/11188109/221063068-f3b97fe7-8482-4001-b072-5abf494ea7e9.png)
 
-### Membuat kode program
+hello word : https://gorgonia.org/tutorials/hello-world/
 
-1. hello word : https://gorgonia.org/tutorials/hello-world/
-2. yang ada di repo
+### Membuat kode program
+ 
+1. Buat kode program fungsi : c = a + b
+2. Buat kode program fungsi z = Wx dimana W adalah matriks n kali n. x adalah vektor ukuran n. dengan n = 2.1957
+3. Buat kode program fungsi z = Wx + b
+4. 
