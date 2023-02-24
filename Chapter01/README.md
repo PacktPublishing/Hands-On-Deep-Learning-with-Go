@@ -33,7 +33,8 @@ hello word : https://gorgonia.org/tutorials/hello-world/
 ## Kerjakan
 1. Buat kode program persamaan garis dengan gorgonia simpan di folder Chapter01/KELAS/NPM
 2. Pull request dengan menggunakan judul : 1-KELAS-NPM-NAMA
-3. Lampirkan juga sertifikat dari :
+3. Pada deskripsi lampirkan skrinsut running program
+4. Lampirkan juga sertifikat dari :
    * https://www.mygreatlearning.com/academy/learn-for-free/courses/go-programming-language
    * https://www.mindluster.com/certificate/3394
    * https://www.codecademy.com/learn/learn-go
