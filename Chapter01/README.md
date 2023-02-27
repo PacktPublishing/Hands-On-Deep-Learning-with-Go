@@ -13,7 +13,7 @@ Terori Menjelaskan :
 
 ## gorgonia.org
 
-Pada bagian ini dikenalkan gorgonia.org. Gorgonia mememrlukan 3 langkah pengerjaan:
+Pada bagian ini dikenalkan gorgonia.org. Gorgonia memerlukan 3 langkah pengerjaan:
 1. Membuat graph komputasi
    ![image](https://user-images.githubusercontent.com/11188109/221063539-122804b2-96a8-49b4-adf8-d6c28e53fcf5.png)
 2. Data Input
