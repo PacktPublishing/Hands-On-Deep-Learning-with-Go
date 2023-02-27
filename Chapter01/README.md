@@ -32,7 +32,7 @@ hello word : https://gorgonia.org/tutorials/hello-world/
 3. Buat kode program fungsi z = Wx + b
 
 ## Kerjakan
-1. Buat kode program persamaan garis dengan gorgonia simpan di folder Chapter01/KELAS/NPM
+1. Buat kode program persamaan garis(selain persamaan linear, misal persamaan parabola, elips,sinus dll), yang berbeda satu sama lain dalam satu kelas. dengan gorgonia simpan di folder Chapter01/KELAS/NPM
 2. Pull request dengan menggunakan judul : 1-KELAS-NPM-NAMA
 3. Pada deskripsi lampirkan skrinsut running program
 4. Lampirkan juga sertifikat dari :
