@@ -31,6 +31,8 @@ hello word : https://gorgonia.org/tutorials/hello-world/
 2. Buat kode program fungsi z = Wx dimana W adalah matriks n kali n. x adalah vektor ukuran n. dengan n = 2.1957
 3. Buat kode program fungsi z = Wx + b
 
+Kumpulkan skrinsutan dari hasil diatas
+
 ## Kerjakan
 1. Buat kode program persamaan garis(selain persamaan linear, misal persamaan parabola, elips,sinus dll), yang berbeda satu sama lain dalam satu kelas. dengan gorgonia simpan di folder Chapter01/KELAS/NPM
 2. Pull request dengan menggunakan judul : 1-KELAS-NPM-NAMA
