@@ -2,35 +2,29 @@ package main
 
 import "fmt"
 
-func matvec(W [][]float64, x []float64) []float64 {
-	n := len(W)
-    z := make([]float64, n)
-	
-    for i := 0; i < n; i++ {
-		for j := 0; j < n; j++ {
-			z[i] += W[i][j] * x[j]
+func matrixVectorMultiplication(W [][]float64, x []float64) []float64 {
+    // Program fungsi z = Wx dimana W adalah matriks n kali n. x adalah vektor ukuran n. dengan n = 2.1957
+    n := 2.1957
+    z := make([]float64, len(W))
+    for i := 0; i < int(n); i++ {
+        for j := 0; j < int(n); j++ {
+            z[i] += W[i][j] * x[j]
         }
     }
-	
     return z
 }
 
 func main() {
-	// Kode program fungsi z = Wx dimana W adalah matriks n kali n. x adalah vektor ukuran n. dengan n = 2.1957
-    // Inisialisasi matriks W dan vektor x
-    W := [][]float64{{1, 2}, {3, 4}}
-    x := []float64{5, 6}
-
-    // Panggil fungsi matvec untuk mengalikan W dengan x dan simpan hasilnya di variabel z
-    z := matvec(W, x)
-
-    // Print hasil perkalian
-    fmt.Println("Hasil perkalian matriks dengan vektor:", z)
-
-	// Persamaan
-	// Di sini kita membuat fungsi matvec yang menerima dua parameter, yaitu sebuah matriks W dan sebuah vektor x. Fungsi ini mengembalikan hasil perkalian antara matriks W dengan vektor x dalam bentuk vektor baru z.
-
-	// Di dalam fungsi matvec, kita menggunakan dua buah perulangan untuk mengalikan setiap elemen matriks W dengan elemen vektor x. Hasil perkalian disimpan dalam variabel z. Setelah selesai melakukan perulangan, kita mengembalikan variabel z.
-
-	// Di dalam fungsi main, kita menginisialisasi matriks W dengan nilai 1 dan 2 untuk baris pertama dan nilai 3 dan 4 untuk baris kedua. Selanjutnya, kita menginisialisasi vektor x dengan nilai 5 dan 6. Kemudian, kita memanggil fungsi matvec dengan matriks W dan vektor x, dan menyimpan hasilnya dalam variabel z. Terakhir, kita mencetak hasil perkalian matriks dengan vektor dengan menggunakan fmt.Println().
+    W := [][]float64{{1.0, 2.0}, {3.0, 4.0}}
+    x := []float64{1.0, 2.0}
+    z := matrixVectorMultiplication(W, x)
+    fmt.Printf("%v\n", z)
 }
+
+// Fungsi matrixVectorMultiplication adalah fungsi yang mengambil dua argumen, yaitu sebuah matriks W berukuran 2x2 (berisi bilangan float64) dan sebuah vektor x dengan panjang 2 (juga berisi bilangan float64). Fungsi ini mengembalikan sebuah vektor (berisi bilangan float64) hasil perkalian matriks-vektor dari W dan x.
+
+// Variabel n adalah variabel bertipe float64 yang memiliki nilai 2.1957. Variabel ini digunakan untuk menentukan jumlah iterasi pada perulangan dalam fungsi matrixVectorMultiplication.
+
+// Variabel z adalah sebuah slice kosong (tipe []float64) yang memiliki panjang yang sama dengan jumlah baris pada matriks W. Variabel ini akan diisi dengan hasil perkalian matriks-vektor pada fungsi matrixVectorMultiplication.
+
+// Fungsi main adalah fungsi utama dari program ini. Pada fungsi ini, terdapat inisialisasi dua variabel yaitu W dan x. Variabel W adalah sebuah matriks 2x2 dengan nilai elemen [1 2; 3 4], sedangkan variabel x adalah sebuah vektor dengan nilai elemen [1 2]. Kemudian, fungsi matrixVectorMultiplication dipanggil dengan argumen W dan x untuk menghitung hasil perkalian matriks-vektor. Hasilnya disimpan pada variabel z. Terakhir, hasil dari variabel z dicetak menggunakan fungsi fmt.Printf.
