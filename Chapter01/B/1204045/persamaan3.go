@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
+	// Kode program fungsi z = Wx + b
     // Define the matrices and vectors
     var W [2][2]float64 = [2][2]float64{{1.2, 3.4}, {5.6, 7.8}}
     var x [2]float64 = [2]float64{9.1, 2.7}
