@@ -15,10 +15,10 @@ func matrixVectorMultiplication(W [][]float64, x []float64) []float64 {
 }
 
 func main() {
-    W := [][]float64{{1.0, 2.0}, {3.0, 4.0}}
+    W := [][]float64{{5.0, 6.0}, {4.0, 3.0}}
     x := []float64{1.0, 2.0}
     z := matrixVectorMultiplication(W, x)
-    fmt.Printf("%v\n", z)
+    fmt.Printf("%v\n", z)
 }
 
 // Fungsi matrixVectorMultiplication adalah fungsi yang mengambil dua argumen, yaitu sebuah matriks W berukuran 2x2 (berisi bilangan float64) dan sebuah vektor x dengan panjang 2 (juga berisi bilangan float64). Fungsi ini mengembalikan sebuah vektor (berisi bilangan float64) hasil perkalian matriks-vektor dari W dan x.
