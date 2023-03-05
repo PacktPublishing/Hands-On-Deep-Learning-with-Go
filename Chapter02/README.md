@@ -31,7 +31,7 @@ type nn struct {
 }
 ```
 
-Kemudian kita akan membuat fungsi baru newNN dengan inputan g dan return berupa struct nn diatas.
+Kemudian kita akan membuat fungsi baru newNN dengan inputan g yaitu graph komputasi gorgonia. Lakukan inisiasi bobot awal dan return berupa struct nn diatas.
 
 ```go
 func newNN(g *ExprGraph) *nn {
@@ -48,5 +48,35 @@ func newNN(g *ExprGraph) *nn {
         g: g,
         w0: w0,
     }
+}
+```
+
+buat fungsi grouping setiap nodes, agar bisa dilakukan kalkulasi gradien dari setiap n-layers yang ada
+
+```go
+func (m *nn) learnables() Nodes {
+    return Nodes{m.w0}
+}
+```
+
+Fungsi utama neural network yang akan kita buat menjadi 
+
+```go
+func (m *nn) fwd(x *Node) (err error) {
+    var l0, l1 *Node
+
+    // Set first layer to be copy of input
+    l0 = x
+
+    // Dot product of l0 and w0, use as input for Sigmoid
+    l0dot := Must(Mul(l0, m.w0))
+
+    // Build hidden layer out of result
+    l1 = Must(Sigmoid(l0dot))
+    // fmt.Println("l1: \n", l1.Value())
+
+    m.pred = l1
+    return
+
 }
 ```
