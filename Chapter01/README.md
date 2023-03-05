@@ -55,12 +55,12 @@ Berikut adalah contoh pengerjaan pemrograman fungsi dengan menggunakan gorgonia.
      g := NewGraph()
    }
    ```
-3. Deklarasikan tensor yang akan terlibat, disini a dan b sebagai inputan
+3. Deklarasikan tensor yang akan terlibat, disini a dan b sebagai inputan dari graph komputasi.
    ```go
    a = NewScalar(g, Float64, WithName("a"))
    b = NewScalar(g, Float64, WithName("b"))
    ```
-4. Definisikan fungsi c=a+b
+4. Definisikan fungsi c=a+b dalam graph komputasi gorgonia.
    ```go
    c, err = Add(a,b)
    if err != nil {
