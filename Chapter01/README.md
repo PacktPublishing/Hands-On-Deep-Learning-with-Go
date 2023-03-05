@@ -35,10 +35,54 @@ Graph adalah fungsi yang mengelola semua variabel. Variabel di deep learning dik
 hello word : https://gorgonia.org/tutorials/hello-world/
 
 ### Membuat kode program
- 
-1. Buat kode program fungsi : c = a + b
-2. Buat kode program fungsi z = Wx dimana W adalah matriks n kali n. x adalah vektor ukuran n. dengan n = 2.1957
-3. Buat kode program fungsi z = Wx + b
+
+Berikut adalah contoh pengerjaan pemrograman fungsi dengan menggunakan gorgonia. 
+
+#### Buat kode program fungsi : c = a + b
+
+1. Deklarasi package dan import library gorgonia
+   ```go
+   package main
+   import (
+        "fmt"
+        "log"
+        . "gorgonia.org/gorgonia"
+    )
+   ```
+2. Deklarasikan fungsi main, dan inisiasi NewGraph() untuk deklarasi membuat graph komputasi
+   ```go
+   func main() {
+     g := NewGraph()
+   }
+   ```
+3. Deklarasikan tensor yang akan terlibat, disini a dan b sebagai inputan
+   ```go
+   a = NewScalar(g, Float64, WithName("a"))
+   b = NewScalar(g, Float64, WithName("b"))
+   ```
+4. Definisikan fungsi c=a+b
+   ```go
+   c, err = Add(a,b)
+   if err != nil {
+              log.Fatal(err)
+              }
+   ```
+5. Buat VM object agar bisa menjalankan model fungsi g yang dideklarasikan pada langkah 2.
+   ```go
+   machine := NewTapeMachine(g)
+   ```
+6. Untuk menjalankan model maka gunakan method RunAll() dari variabel VM yang dibuat. Jangan lupa isi inisiasi inputan a dan b.
+   ```go
+   Let(a, 1.0)
+   Let(b, 2.0)
+   if machine.RunAll() != nil {
+                           log.Fatal(err)
+                           }
+   ```
+
+#### Buat kode program fungsi z = Wx dimana W adalah matriks n kali n. x adalah vektor ukuran n. dengan n = 2.1957
+
+#### Buat kode program fungsi z = Wx + b
 
 Kumpulkan skrinsutan dari hasil diatas
 
