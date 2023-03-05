@@ -11,6 +11,15 @@ Terori Menjelaskan :
 * Layer, Label, Supervised dan Unsupervised
 * Machine Learning, Deep Learning
 
+## golang
+
+* fork terlebih dahulu, clone ke pc
+* buat folder NPM di dalam chapter01/Kelas/NPM
+* ketik : go mod init github.com/bukped/ai/Chapter01/KELAS/NPM
+* buat file main.go dan ketikkan perintah hello word
+* go mod tidy
+* go run .
+
 ## gorgonia.org
 
 Pada bagian ini dikenalkan gorgonia.org. Gorgonia memerlukan 3 langkah pengerjaan:
