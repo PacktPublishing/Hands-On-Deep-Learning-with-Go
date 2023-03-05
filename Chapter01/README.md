@@ -36,7 +36,7 @@ hello word : https://gorgonia.org/tutorials/hello-world/
 
 ### Membuat kode program
 
-Berikut adalah contoh pengerjaan pemrograman fungsi dengan menggunakan gorgonia. 
+Berikut adalah contoh pengerjaan pemrograman fungsi dengan menggunakan gorgonia.
 
 #### Buat kode program fungsi : c = a + b
 
@@ -132,6 +132,16 @@ Berikut adalah contoh pengerjaan pemrograman fungsi dengan menggunakan gorgonia.
    //melihat hasil output
    fmt.Println(z.Value().Data())
    ```
+   
+Untuk melakukan visualisasi graph komputasi, kita bisa menggunakan ioutil.
+```go
+ioutil.WriteFile("simple_graph.dot", []byte(g.ToDot()), 0644)
+```
+
+Konversi ke file SVG bisa dilakukan dengan menggunakan [dot](https://www.mankier.com/1/dot)
+```sh
+dot -Tsvg simple_graph.dot -O
+```
 
 #### Buat kode program fungsi z = Wx + b
 
