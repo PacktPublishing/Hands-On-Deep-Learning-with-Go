@@ -63,9 +63,6 @@ Berikut adalah contoh pengerjaan pemrograman fungsi dengan menggunakan gorgonia.
 4. Definisikan fungsi c=a+b dalam graph komputasi gorgonia.
    ```go
    c, err = Add(a,b)
-   if err != nil {
-              log.Fatal(err)
-              }
    ```
 5. Buat VM object agar bisa menjalankan model fungsi g yang dideklarasikan pada langkah 2.
    ```go
@@ -75,12 +72,66 @@ Berikut adalah contoh pengerjaan pemrograman fungsi dengan menggunakan gorgonia.
    ```go
    Let(a, 1.0)
    Let(b, 2.0)
-   if machine.RunAll() != nil {
-                           log.Fatal(err)
-                           }
+   machine.RunAll()
    ```
 
 #### Buat kode program fungsi z = Wx dimana W adalah matriks n kali n. x adalah vektor ukuran n. dengan n = 2.1957
+
+1. Deklarasi package dan import library gorgonia
+   ```go
+   package main
+   import (
+        "fmt"
+        "log"
+
+        G "gorgonia.org/gorgonia"
+        "gorgonia.org/tensor"
+   )
+   ```
+2. Deklarasikan fungsi main, dan inisiasi NewGraph() untuk deklarasi membuat graph komputasi
+   ```go
+   func main() {
+     g := NewGraph()
+   }
+   ```
+3. Deklarasikan tensor yang akan terlibat, disini matriks W dan x sebagai inputan dari graph komputasi.
+   ```go
+   //deklarasi W, dengan bobot inisiasi matB
+   matB := []float64{0.9,0.7,0.4,0.2}
+   matT := tensor.New(tensor.WithBacking(matB), tensor.WithShape(2, 2))
+   mat := G.NewMatrix(g,
+           tensor.Float64,
+           G.WithName("W"),
+           G.WithShape(2, 2),
+           G.WithValue(matT),
+   )
+   
+   // deklarasi x dengan inisiasi bobot vecB
+   vecB := []float64{5,7}
+
+   vecT := tensor.New(tensor.WithBacking(vecB), tensor.WithShape(2))
+
+   vec := G.NewVector(g,
+           tensor.Float64,
+           G.WithName("x"),
+           G.WithShape(2),
+           G.WithValue(vecT),
+   )
+   ```
+4. Definisikan fungsi z=Wx dalam graph komputasi gorgonia. Karena perkalian maka menggunakan rumus multification.
+   ```go
+   z, err := G.Mul(mat, vec)
+   ```
+5. Buat VM object agar bisa menjalankan model fungsi g yang dideklarasikan pada langkah 2.
+   ```go
+   machine := G.NewTapeMachine(g)
+   ```
+6. Untuk menjalankan model maka gunakan method RunAll() dari variabel VM yang dibuat. Jangan lupa isi inisiasi inputan a dan b.
+   ```go
+   machine.RunAll()
+   //melihat hasil output
+   fmt.Println(z.Value().Data())
+   ```
 
 #### Buat kode program fungsi z = Wx + b
 
