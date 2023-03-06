@@ -153,9 +153,7 @@ func (m *nn) fwd(x *Node) (err error) {
 6. Untuk menjalankan model dengan iterasi sebanyak 10000 kali.iterasi looping inilah yang kita sebut sebagai training.
    ```go
    for i := 0; i < 10000; i++ {
-        if err = vm.RunAll(); err != nil {
-            log.Fatalf("Failed at inter %d: %v", i, err)
-        }
+        vm.RunAll()
         solver.Step(NodesToValueGrads(m.learnables()))
         fmt.Println("\nState at iter", i)
         fmt.Println("Cost: \n", cost.Value())
