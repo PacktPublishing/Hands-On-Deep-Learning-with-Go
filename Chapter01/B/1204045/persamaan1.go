@@ -1,22 +1,40 @@
 package main
 
-import "fmt"
+import (
+        "fmt"
+        "log"
+        // "io/ioutil"
+        G "gorgonia.org/gorgonia"
+)
 
-func add(a int, b int) int {
-    c := a + b
-    return c
-}
-
+// kode program fungsi : c = a + b
 func main() {
-    // Kode program fungsi : c = a + b
-    // Panggil fungsi add dengan nilai 5 dan 10, simpan hasilnya di variabel sum
-    sum := add(5, 10)
+        g := G.NewGraph()
 
-    // Print hasil penjumlahan
-    fmt.Println("Hasil penjumlahan:", sum)
+        var a, b, c *G.Node
+        var err error
 
-    // Penjelasan
-    // Di sini kita membuat fungsi bernama add yang menerima dua parameter bertipe integer a dan b. Fungsi ini menambahkan kedua bilangan dan mengembalikan hasilnya dalam bentuk integer yang disimpan dalam variabel c.
+        // define the expression
+        a = G.NewScalar(g, G.Float64, G.WithName("a"))
+        b = G.NewScalar(g, G.Float64, G.WithName("b"))
 
-    // Di dalam fungsi main, kita memanggil fungsi add dengan nilai 5 dan 10, dan menyimpan hasilnya dalam variabel sum. Kemudian, kita mencetak hasil penjumlahan dengan menggunakan fmt.Println().
+        // fungsi c=a+b
+        if c, err = G.Add(a, b); err != nil {
+                log.Fatal(err)
+        }
+
+        // create a VM to run the program on
+        machine := G.NewTapeMachine(g)
+        defer machine.Close()
+
+        // set initial values then run
+        G.Let(a, 2.0)
+        G.Let(b, 2.5)
+        if err = machine.RunAll(); err != nil {
+                log.Fatal(err)
+        }
+
+        // ioutil.WriteFile("pers1_graph.dot", []byte(g.ToDot()), 0644)
+
+        fmt.Println(c.Value().Data())
 }

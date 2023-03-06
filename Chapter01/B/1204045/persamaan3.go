@@ -1,33 +1,62 @@
 package main
+import (
+     "fmt"
+     "log"
+    //  "io/ioutil"
+     G "gorgonia.org/gorgonia"
+     "gorgonia.org/tensor"
+)
 
-import "fmt"
-
+// kode program fungsi z = Wx + b
 func main() {
-	// Kode program fungsi z = Wx + b
-    // Define the matrices and vectors
-    var W [2][2]float64 = [2][2]float64{{1.2, 3.4}, {5.6, 7.8}}
-    var x [2]float64 = [2]float64{9.1, 2.7}
-    var b [2]float64 = [2]float64{1.2, 2.3}
+	g := G.NewGraph()
 
-    // Calculate Wx
-    var wx [2]float64
-    for i := 0; i < len(W); i++ {
-        var sum float64 = 0
-        for j := 0; j < len(W[i]); j++ {
-            sum += W[i][j] * x[j]
-        }
-        wx[i] = sum
+    //deklarasi W, dengan bobot inisiasi matB
+    matB := []float64{0.9,0.7,0.4,0.2}
+    matT := tensor.New(tensor.WithBacking(matB), tensor.WithShape(2, 2))
+    mat := G.NewMatrix(g,
+            tensor.Float64,
+            G.WithName("W"),
+            G.WithShape(2, 2),
+            G.WithValue(matT),
+    )
+
+    // deklarasi x dengan inisiasi bobot vecB
+    vecB := []float64{5,7}
+
+    vecT := tensor.New(tensor.WithBacking(vecB), tensor.WithShape(2))
+
+    vec := G.NewVector(g,
+            tensor.Float64,
+            G.WithName("x"),
+            G.WithShape(2),
+            G.WithValue(vecT),
+    )
+
+    //tambah deklarasi b
+    b := G.NewScalar(g,
+        tensor.Float64,
+        G.WithName("b"),
+        G.WithValue(3.0),
+    )
+
+    a, err := G.Mul(mat, vec)
+    z, err := G.Add(a, b)
+
+    if a, err = G.Mul(mat, vec); err != nil {
+        log.Fatal(err)
     }
 
-    // Calculate z = Wx + b
-    var z [2]float64
-    for i := 0; i < len(wx); i++ {
-        z[i] = wx[i] + b[i]
+    if z, err = G.Add(a, b); err != nil {
+        log.Fatal(err)
     }
 
-    // Print the result
-    fmt.Printf("z = [%.2f, %.2f]\n", z[0], z[1])
+    machine := G.NewTapeMachine(g)
+    if err = machine.RunAll(); err != nil {
+        log.Fatal(err)
+    }
 
-	// Penjelasan
-	// Dalam kode ini, pertama-tama kita mendefinisikan matriks dan vektor W, x, dan b sebagai array. Kemudian, kita menghitung vektor Wx dengan mengalikan W dan x menggunakan loop bersarang. Akhirnya, kami menghitung z dengan menambahkan Wx dan b, dan mencetak hasilnya.
+    // ioutil.WriteFile("pers3_graph.dot", []byte(g.ToDot()), 0644)
+       
+    fmt.Println(z.Value().Data())
 }
