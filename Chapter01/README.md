@@ -216,11 +216,11 @@ dot -Tsvg simple_graph.dot -O
    ```
 
 ## Kerjakan
-1. Buat kode program persamaan garis(selain persamaan linear, misal persamaan parabola, elips,sinus dll), yang berbeda satu sama lain dalam satu kelas. dengan gorgonia simpan di folder Chapter01/KELAS/NPM
+1. Buat kode program persamaan garis(selain persamaan linear, misal persamaan parabola, elips,sinus dll), yang berbeda satu sama lain dalam satu kelas. dengan gorgonia simpan di folder Chapter01/KELAS/NPM (nilai 60)
 2. Pull request dengan menggunakan judul : 1-KELAS-NPM-NAMA
 3. Pada deskripsi lampirkan skrinsut running program
 4. Lampirkan juga sertifikat dari :
-   * https://www.mygreatlearning.com/academy/learn-for-free/courses/go-programming-language
-   * https://www.mindluster.com/certificate/3394
-   * https://www.codecademy.com/learn/learn-go
-   * https://www.coursera.org/specializations/google-golang
+   * https://www.mygreatlearning.com/academy/learn-for-free/courses/go-programming-language (nilai 10)
+   * https://www.mindluster.com/certificate/3394 (nilai 10)
+   * https://www.codecademy.com/learn/learn-go (nilai 10)
+   * https://www.coursera.org/specializations/google-golang (nilai 10)
