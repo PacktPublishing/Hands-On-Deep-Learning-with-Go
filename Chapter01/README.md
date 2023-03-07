@@ -13,6 +13,8 @@ Terori Menjelaskan :
 
 ## golang
 
+Pengenalan Golang : https://youtu.be/R0EF4apbCag
+
 * fork terlebih dahulu, clone ke pc
 * buat folder NPM di dalam chapter01/Kelas/NPM
 * ketik : go mod init github.com/bukped/ai/Chapter01/KELAS/NPM
@@ -21,6 +23,8 @@ Terori Menjelaskan :
 * go run .
 
 ## gorgonia.org
+
+Pengenalan Gorgonia : https://youtu.be/ckLI1xsyF0c
 
 Pada bagian ini dikenalkan gorgonia.org. Gorgonia memerlukan 3 langkah pengerjaan:
 1. Membuat graph komputasi
@@ -35,6 +39,8 @@ Graph adalah fungsi yang mengelola semua variabel. Variabel di deep learning dik
 hello word : https://gorgonia.org/tutorials/hello-world/
 
 ### Membuat kode program
+
+Membuat persamaan : https://youtu.be/CS1UKDK45t0
 
 Berikut adalah contoh pengerjaan pemrograman fungsi dengan menggunakan gorgonia.
 
