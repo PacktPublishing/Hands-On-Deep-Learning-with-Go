@@ -2,45 +2,49 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
+
+	G "gorgonia.org/gorgonia"
+	"gorgonia.org/tensor"
 )
 
 func main() {
-	n := 2.1957
+	g := G.NewGraph()
 
-	// Membuat matriks W dan vektor x secara acak
-	W := make([][]float64, int(n))
-	x := make([]float64, int(n))
-	for i := 0; i < int(n); i++ {
-		W[i] = make([]float64, int(n))
-		for j := 0; j < int(n); j++ {
-			W[i][j] = rand.Float64()
-		}
-		x[i] = rand.Float64()
-	}
+	//deklarasi W, dengan bobot inisiasi matB
+	matB := []float64{0.9, 0.7, 0.4, 0.2}
+	matT := tensor.New(tensor.WithBacking(matB), tensor.WithShape(2, 2))
+	mat := G.NewMatrix(g,
+		tensor.Float64,
+		G.WithName("W"),
+		G.WithShape(2, 2),
+		G.WithValue(matT),
+	)
 
-	// Membuat nilai b secara acak
-	b := rand.Float64()
+	// deklarasi x dengan inisiasi bobot vecB
+	vecB := []float64{5, 7}
 
-	// Menghitung nilai z = Wx + b
-	z := make([]float64, int(n))
-	for i := 0; i < int(n); i++ {
-		for j := 0; j < int(n); j++ {
-			z[i] += W[i][j] * x[j]
-		}
-		z[i] += b
-	}
+	vecT := tensor.New(tensor.WithBacking(vecB), tensor.WithShape(2))
 
-	// Mencetak hasil
-	fmt.Println("Matriks W:")
-	for i := 0; i < int(n); i++ {
-		fmt.Println(W[i])
-	}
+	vec := G.NewVector(g,
+		tensor.Float64,
+		G.WithName("x"),
+		G.WithShape(2),
+		G.WithValue(vecT),
+	)
 
-	fmt.Println("\nVektor x:", x)
+	//tambah deklarasi b
+	b := G.NewScalar(g,
+		tensor.Float64,
+		G.WithName("b"),
+		G.WithValue(3.0),
+	)
 
-	fmt.Println("\nb:", b)
+	a, _ := G.Mul(mat, vec)
+	z, _ := G.Add(a, b)
 
-	fmt.Println("\nz = Wx + b")
-	fmt.Printf("z = %v\n", z)
+	machine := G.NewTapeMachine(g)
+
+	machine.RunAll()
+	//melihat hasil output
+	fmt.Println(z.Value().Data())
 }

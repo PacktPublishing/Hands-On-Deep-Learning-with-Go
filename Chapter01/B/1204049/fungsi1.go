@@ -1,15 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-func add(a, b int32) int32 {
-	return a + b
-}
+	. "gorgonia.org/gorgonia"
+)
 
 func main() {
-	c := add(23, 7)
-	fmt.Println("a = 23")
-	fmt.Println("b = 7")
-	fmt.Println("c = a + b")
-	fmt.Println("c =", c)
+	g := NewGraph()
+	a := NewScalar(g, Float64, WithName("a"))
+	b := NewScalar(g, Float64, WithName("b"))
+	c, _ := Add(a, b)
+
+	machine := NewTapeMachine(g)
+	Let(a, 230.0)
+	Let(b, 7.0)
+	machine.RunAll()
+	fmt.Printf("Nilai a = %v\n", a.Value())
+	fmt.Printf("Nilai b = %v\n", b.Value())
+	fmt.Printf("Nilai c = a + b")
+	fmt.Printf("\nNilai c = %v", c.Value())
 }

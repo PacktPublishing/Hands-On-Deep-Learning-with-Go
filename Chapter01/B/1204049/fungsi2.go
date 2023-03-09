@@ -2,36 +2,40 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
+	"io/ioutil"
+
+	. "gorgonia.org/gorgonia"
+	"gorgonia.org/tensor"
 )
 
 func main() {
-	n := 2.1957
-	W := make([][]float64, int(n)) // Matriks W berukuran n x n
-	x := make([]float64, int(n))   // Vektor x berukuran n
+	g := NewGraph()
 
-	// Mengisi matriks W dan vektor x dengan nilai acak
-	for i := 0; i < int(n); i++ {
-		W[i] = make([]float64, int(n))
-		for j := 0; j < int(n); j++ {
-			W[i][j] = rand.Float64()
-		}
-		x[i] = rand.Float64()
-	}
+	//deklarasi W, dengan bobot inisiasi matB
+	matB := []float64{0.9, 0.7, 0.4, 0.2}
+	matT := tensor.New(tensor.WithBacking(matB), tensor.WithShape(2, 2))
+	mat := NewMatrix(g,
+		tensor.Float64,
+		WithName("W"),
+		WithShape(2, 2),
+		WithValue(matT),
+	)
+	// deklarasi x dengan inisiasi bobot vecB
+	vecB := []float64{5, 7}
 
-	// Menghitung z = Wx
-	z := make([]float64, int(n))
-	for i := 0; i < int(n); i++ {
-		for j := 0; j < int(n); j++ {
-			z[i] += W[i][j] * x[j]
-		}
-	}
+	vecT := tensor.New(tensor.WithBacking(vecB), tensor.WithShape(2))
 
-	// Mencetak hasil
-	fmt.Println("Matriks W:")
-	for i := 0; i < int(n); i++ {
-		fmt.Println(W[i])
-	}
-	fmt.Println("Vektor x:", x)
-	fmt.Printf("z = Wx, z = %v\n", z)
+	vec := NewVector(g,
+		tensor.Float64,
+		WithName("x"),
+		WithShape(2),
+		WithValue(vecT),
+	)
+
+	z, _ := Mul(mat, vec)
+	machine := NewTapeMachine(g)
+	machine.RunAll()
+	//melihat hasil output
+	fmt.Println(z.Value().Data())
+	ioutil.WriteFile("simple_graph.dot", []byte(g.ToDot()), 0644)
 }

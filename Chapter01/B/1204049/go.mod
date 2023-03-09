@@ -1,8 +1,11 @@
-module chapter1
+module github.com/Zianati/ai
 
 go 1.20
 
-require gorgonia.org/gorgonia v0.9.17
+require (
+	gorgonia.org/gorgonia v0.9.17
+	gorgonia.org/tensor v0.9.24
+)
 
 require (
 	github.com/apache/arrow/go/arrow v0.0.0-20211112161151-bc219186db40 // indirect
@@ -22,7 +25,6 @@ require (
 	google.golang.org/protobuf v1.28.1 // indirect
 	gorgonia.org/cu v0.9.4 // indirect
 	gorgonia.org/dawson v1.2.0 // indirect
-	gorgonia.org/tensor v0.9.24 // indirect
 	gorgonia.org/vecf32 v0.9.0 // indirect
 	gorgonia.org/vecf64 v0.9.0 // indirect
 )
