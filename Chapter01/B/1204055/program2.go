@@ -1,22 +1,40 @@
 package main
-
 import (
-	"fmt"
+     "fmt"
+	 "io/ioutil"
+     . "gorgonia.org/gorgonia"
+     "gorgonia.org/tensor"
 )
 
 func main() {
-	// Inisialisasi matriks W dan vektor x
-	W := [2][2]float64{{1.0, 2.0}, {3.0, 4.0}}
-	x := [2]float64{2.1957, 1.0}
+	g := NewGraph()
+  //deklarasi W, dengan bobot inisiasi matB
+matB := []float64{0.9,0.7,0.4,0.2}
+matT := tensor.New(tensor.WithBacking(matB), tensor.WithShape(2, 2))
+mat := NewMatrix(g,
+        tensor.Float64,
+        WithName("W"),
+        WithShape(2, 2),
+        WithValue(matT),
+)
 
-	// Hitung z = Wx
-	var z [2]float64
-	for i := 0; i < 2; i++ {
-		for j := 0; j < 2; j++ {
-			z[i] += W[i][j] * x[j]
-		}
-	}
+// deklarasi x dengan inisiasi bobot vecB
+vecB := []float64{5,7}
 
-	// Cetak hasil
-	fmt.Println("z = ", z)
+vecT := tensor.New(tensor.WithBacking(vecB), tensor.WithShape(2))
+
+vec := NewVector(g,
+        tensor.Float64,
+        WithName("x"),
+        WithShape(2),
+        WithValue(vecT),
+)
+
+z, _ := Mul(mat, vec)
+machine := NewTapeMachine(g)
+machine.RunAll()
+//melihat hasil output
+fmt.Println(z.Value().Data())
+ioutil.WriteFile("simple_graph.dot", []byte(g.ToDot()), 0644)
 }
+
