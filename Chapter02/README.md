@@ -180,3 +180,25 @@ func (m *nn) fwd(x *Node) (err error) {
     fmt.Println("Output after Training: \n", m.pred.Value())
    ```
 
+## Fungsi aktifasi
+
+Disebut juga sebagai transfer function. Berfungsi untuk memudahkan optimasi. Sebagai pertimbangan :
+* Simple
+* DIferensiabilitas
+* Kontinuitas
+* Monotonitas
+
+### Step Function
+
+![image](https://user-images.githubusercontent.com/11188109/224581866-995ce64e-6762-483f-908f-77b46c373084.png)
+
+Fungsi aktifasi paling sederhana, mengeluarkan angka 0 dan 1 saja.
+```go
+func step(x) {
+    if x >= 0 {
+        return 1
+    } else {
+        return 0
+    }
+}
+```
