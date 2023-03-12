@@ -19,6 +19,19 @@ Tujuannya adalah melakukan proses optimisasi yang disebut Stochastic Gradient De
 * Neural network terdiri dari dua layer : 
   * L0 : adalah Input data
   * L1 : output SGD dari l0 x w0
+Kita mulai dengan membuat package dan melakukan import gorgonia
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "log"
+
+    . "gorgonia.org/gorgonia"
+    "gorgonia.org/tensor"
+)
+```
 
 ### Neural Network dalam type struct dan fungsi go
 
