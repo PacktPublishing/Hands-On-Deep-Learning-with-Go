@@ -202,3 +202,16 @@ func step(x) {
     }
 }
 ```
+
+### Linear Function
+
+![image](https://user-images.githubusercontent.com/11188109/224582034-235ecf4c-dc3c-43ac-936c-2dc35c72db34.png)
+
+Fungsi aktifasi yang sama dengan step, tetapi menggunakan persamaan garis liniear y = ax+b. Penggunaannya tidak akan banyak membantu untuk optimasi gradien. karena nilainya akan sama.
+```go
+func linear(x){
+   a:=1
+   b:=0
+   return a * x + b
+}
+```
