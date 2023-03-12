@@ -1,22 +1,53 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
 
-func program2(W [2][2]float64, x [2]float64) [2]float64 {
-	var z [2]float64
-	z[0] = W[0][0]*x[0] + W[0][1]*x[1]
-	z[1] = W[1][0]*x[0] + W[1][1]*x[1]
-	return z
-}
+	//  "io/ioutil"
+	G "gorgonia.org/gorgonia"
+	"gorgonia.org/tensor"
+)
 
+// kode program fungsi z = Wx dimana W adalah matriks n kali n. x adalah vektor ukuran n. dengan n = 2.1957
 func main() {
-	// Definisi matrix W dan vektor x
-	W := [2][2]float64{{1.2, 3.4}, {5.6, 7.8}}
-	n := 2.1957
-	x := [2]float64{n, 1.0}
+	g := G.NewGraph()
 
-	// W kali x
-	z := program2(W, x)
+	var z *G.Node
+	var err error
 
-	fmt.Println("z = ", z)
+	//deklarasi W, dengan bobot inisiasi matB
+	matB := []float64{0.9, 0.7, 0.4, 0.2}
+	matT := tensor.New(tensor.WithBacking(matB), tensor.WithShape(2, 2))
+	mat := G.NewMatrix(g,
+		tensor.Float64,
+		G.WithName("W"),
+		G.WithShape(2, 2),
+		G.WithValue(matT),
+	)
+
+	// deklarasi x dengan inisiasi bobot vecB
+	vecB := []float64{5, 7}
+	vecT := tensor.New(tensor.WithBacking(vecB), tensor.WithShape(2))
+	vec := G.NewVector(g,
+		tensor.Float64,
+		G.WithName("x"),
+		G.WithShape(2),
+		G.WithValue(vecT),
+	)
+
+	// fungsi z=Wx menggunakan rumus multification
+	if z, err = G.Mul(mat, vec); err != nil {
+		log.Fatal(err)
+	}
+
+	machine := G.NewTapeMachine(g)
+
+	if err = machine.RunAll(); err != nil {
+		log.Fatal(err)
+	}
+
+	// ioutil.WriteFile("pers2_graph.dot", []byte(g.ToDot()), 0644)
+
+	fmt.Println(z.Value().Data())
 }
