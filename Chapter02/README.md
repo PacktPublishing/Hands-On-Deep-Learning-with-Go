@@ -10,7 +10,7 @@ Pada bagian ini akan dipelajari :
 
 Tujuannya adalah melakukan proses optimisasi yang disebut Stochastic Gradient Descent(SGD) atau backpropagation dari setiap bobot(w) di layer masing-masing. Seperti sebelumnya, kita buat dahulu model graph nya.
 
-![autodraw 3_13_2023](https://user-images.githubusercontent.com/11188109/224580279-92915197-b6ea-49a8-b51e-81197fe52d66.png)
+![image](https://user-images.githubusercontent.com/11188109/224580308-b8a84b6a-cf69-490a-8441-a33de7c2fa2c.png)
 
 * Input data(L0) : 4 x 3 matrix
 * Output data(pred) : 4 x 1 vektor
