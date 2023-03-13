@@ -180,7 +180,7 @@ func (m *nn) fwd(x *Node) (err error) {
     fmt.Println("Output after Training: \n", m.pred.Value())
    ```
 
-## Gradien Fungsi aktifasi
+## Gradien dan Fungsi aktifasi
 
 ![image](https://user-images.githubusercontent.com/11188109/224583377-863ad7ba-8577-44d5-a4d3-4018a843cbe3.png)
 
