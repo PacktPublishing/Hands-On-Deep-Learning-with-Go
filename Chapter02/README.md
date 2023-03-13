@@ -241,3 +241,14 @@ func leaky_relu(x) {
     }
 }
 ```
+
+### Sigmoid Function
+
+![image](https://user-images.githubusercontent.com/11188109/224583111-8cc1a636-1387-4d7c-8b53-a27163f9aac7.png)
+
+Memiliki hasil yang lebih baik daripada ReLU, hanya saja beban komputasinya tinggi. Fungsi sigmoid merupakan fungsi non linear yang berarti tidak memperlihatkan garis yagn lurus, tetapi berbeda di setiap titiknya.
+```go
+func sigmoid(x){
+    return 1 / (1 + Exp(-x))
+}
+```
