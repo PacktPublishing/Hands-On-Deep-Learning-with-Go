@@ -252,3 +252,14 @@ func sigmoid(x){
     return 1 / (1 + Exp(-x))
 }
 ```
+
+### Tanh
+
+![image](https://user-images.githubusercontent.com/11188109/224583222-d86a1bb9-4db2-4d09-9d8b-9c0c825b8386.png)
+
+Jika kita menginginkan fungsi sigmoid yang menghasilkan juga nilai negatif maka kita bisa menggunakan tanh.
+```go
+func tanh(x){
+  return 2 * (1 + Exp(-2*x)) - 1
+}
+```
