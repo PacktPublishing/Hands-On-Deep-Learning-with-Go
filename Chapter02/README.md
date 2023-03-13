@@ -185,10 +185,10 @@ func (m *nn) fwd(x *Node) (err error) {
 ![image](https://user-images.githubusercontent.com/11188109/224583377-863ad7ba-8577-44d5-a4d3-4018a843cbe3.png)
 
 Disebut juga sebagai transfer function. Berfungsi untuk memudahkan optimasi. Sebagai pertimbangan :
-* Simple
-* DIferensiabilitas
-* Kontinuitas
-* Monotonitas
+* Simple : fungsi dan persamaannya
+* DIferensiabilitas : memiliki nilai yang berbeda
+* Kontinuitas : non diskrit, garisnya menyambung tidak putus
+* Monotonitas : Menggunakan satu fungsi saja agar menghemat komputasi
 
 ### Step Function
 
