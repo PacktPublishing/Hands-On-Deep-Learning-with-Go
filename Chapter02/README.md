@@ -269,3 +269,9 @@ func tanh(x){
   return 2 * (1 + Exp(-2*x)) - 1
 }
 ```
+
+## Gradient descent
+
+![image](https://user-images.githubusercontent.com/11188109/224594608-c6536039-48c9-473e-8828-a584c8dfa037.png)
+
+m atau gradient bisa dinyatakan sebagai gradien atau turunan atau derifative
