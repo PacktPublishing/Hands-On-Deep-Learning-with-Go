@@ -215,3 +215,14 @@ func linear(x){
    return a * x + b
 }
 ```
+
+### Rectified Linuear Units
+
+![image](https://user-images.githubusercontent.com/11188109/224582329-a60e98cb-c099-418a-9196-4762c106a662.png)
+
+Fungsi aktifasi yang paling populer karena sifatnya yang menghasilkan non-linear dan cepat. Menggabungkan step dan liniear function. Menghasilkan 0 jika nilai inputan negatif. Kekurangannya adalah, jika hasil 0 maka neuran atau node akan mati dan tidak akan di hidupkan lagi. 
+```go
+func relu(x){
+   return Max(0,x)
+}
+```
