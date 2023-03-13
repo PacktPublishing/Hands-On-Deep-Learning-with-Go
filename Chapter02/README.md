@@ -182,6 +182,8 @@ func (m *nn) fwd(x *Node) (err error) {
 
 ## Fungsi aktifasi
 
+![image](https://user-images.githubusercontent.com/11188109/224583377-863ad7ba-8577-44d5-a4d3-4018a843cbe3.png)
+
 Disebut juga sebagai transfer function. Berfungsi untuk memudahkan optimasi. Sebagai pertimbangan :
 * Simple
 * DIferensiabilitas
