@@ -216,7 +216,7 @@ func linear(x){
 }
 ```
 
-### Rectified Linuear Units
+### Rectified Linear Units
 
 ![image](https://user-images.githubusercontent.com/11188109/224582329-a60e98cb-c099-418a-9196-4762c106a662.png)
 
@@ -224,5 +224,20 @@ Fungsi aktifasi yang paling populer karena sifatnya yang menghasilkan non-linear
 ```go
 func relu(x){
    return Max(0,x)
+}
+```
+
+### Leaky ReLU
+
+![image](https://user-images.githubusercontent.com/11188109/224582825-e17b840c-632e-40cc-98f4-68a9df2e1096.png)
+
+Untuk memperbaiki peluang ReLU yang menghasilkan nilai 0 sehingga membuat node mati. Maka diatasi dengan membuat nilai 0 memiliki nilai yang sangat-sangat kecil, sehingga tidak mematikan node neuron.
+```go
+func leaky_relu(x) {
+    if x >= 0 {
+        return x
+    } else {
+        return 0.01 * x
+    }
 }
 ```
