@@ -182,6 +182,8 @@ func (m *nn) fwd(x *Node) (err error) {
 
 ## Gradien dan Fungsi aktifasi
 
+Dicontohkan dalam perhitungan di spreadsheet : https://docs.google.com/spreadsheets/d/17UlswZQZFFexclWjb9YRHUeKzCZm6r1BnrsOoBJosr4/edit?usp=sharing
+
 ![image](https://user-images.githubusercontent.com/11188109/224583377-863ad7ba-8577-44d5-a4d3-4018a843cbe3.png)
 
 Optimalisasi gradien bisa dengan melihat :
