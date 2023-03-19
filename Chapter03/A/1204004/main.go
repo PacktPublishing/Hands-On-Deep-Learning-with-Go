@@ -15,6 +15,7 @@ import (
 
 	"github.com/aiteung/mnist"
 	"github.com/pkg/errors"
+	"gopkg.in/cheggaaa/pb.v1"
 	"gorgonia.org/gorgonia"
 	"gorgonia.org/tensor"
 
