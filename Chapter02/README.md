@@ -10,6 +10,8 @@ Pada bagian ini akan dipelajari :
 
 Tujuannya adalah melakukan proses optimisasi yang disebut Stochastic Gradient Descent(SGD) atau backpropagation dari setiap bobot(w) di layer masing-masing. Seperti sebelumnya, kita buat dahulu model graph nya.
 
+![image](https://user-images.githubusercontent.com/11188109/224580308-b8a84b6a-cf69-490a-8441-a33de7c2fa2c.png)
+
 * Input data(L0) : 4 x 3 matrix
 * Output data(pred) : 4 x 1 vektor
 * inisialisasi bobot(w) dengan 3x1 vektor
@@ -17,6 +19,20 @@ Tujuannya adalah melakukan proses optimisasi yang disebut Stochastic Gradient De
 * Neural network terdiri dari dua layer : 
   * L0 : adalah Input data
   * L1 : output SGD dari l0 x w0
+
+Kita mulai dengan membuat package dan melakukan import gorgonia
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "log"
+
+    . "gorgonia.org/gorgonia"
+    "gorgonia.org/tensor"
+)
+```
 
 ### Neural Network dalam type struct dan fungsi go
 
@@ -164,3 +180,104 @@ func (m *nn) fwd(x *Node) (err error) {
     fmt.Println("Output after Training: \n", m.pred.Value())
    ```
 
+## Gradien dan Fungsi aktifasi
+
+Dicontohkan dalam perhitungan di spreadsheet : https://docs.google.com/spreadsheets/d/17UlswZQZFFexclWjb9YRHUeKzCZm6r1BnrsOoBJosr4/edit?usp=sharing
+
+![image](https://user-images.githubusercontent.com/11188109/224583377-863ad7ba-8577-44d5-a4d3-4018a843cbe3.png)
+
+Optimalisasi gradien bisa dengan melihat :
+* Kenaikan : ascending
+* Penurunan : descending
+
+Fungsi aktifasi disebut juga sebagai transfer function. Berfungsi untuk memudahkan optimasi. Sebagai pertimbangan :
+* Simple : fungsi dan persamaannya
+* DIferensiabilitas : memiliki nilai yang berbeda
+* Kontinuitas : non diskrit, garisnya menyambung tidak putus
+* Monotonitas : Menggunakan satu fungsi saja agar menghemat komputasi
+
+### Step Function
+
+![image](https://user-images.githubusercontent.com/11188109/224581866-995ce64e-6762-483f-908f-77b46c373084.png)
+
+Fungsi aktifasi paling sederhana, mengeluarkan angka 0 dan 1 saja.
+```go
+func step(x) {
+    if x >= 0 {
+        return 1
+    } else {
+        return 0
+    }
+}
+```
+
+### Linear Function
+
+![image](https://user-images.githubusercontent.com/11188109/224582034-235ecf4c-dc3c-43ac-936c-2dc35c72db34.png)
+
+Fungsi aktifasi yang sama dengan step, tetapi menggunakan persamaan garis liniear y = ax+b. Penggunaannya tidak akan banyak membantu untuk optimasi gradien. karena nilainya akan sama.
+```go
+func linear(x){
+   a:=1
+   b:=0
+   return a * x + b
+}
+```
+
+### Rectified Linear Units
+
+![image](https://user-images.githubusercontent.com/11188109/224582329-a60e98cb-c099-418a-9196-4762c106a662.png)
+
+Fungsi aktifasi yang paling populer karena sifatnya yang menghasilkan non-linear dan cepat. Menggabungkan step dan liniear function. Menghasilkan 0 jika nilai inputan negatif. Kekurangannya adalah, jika hasil 0 maka neuran atau node akan mati dan tidak akan di hidupkan lagi. 
+```go
+func relu(x){
+   return Max(0,x)
+}
+```
+
+### Leaky ReLU
+
+![image](https://user-images.githubusercontent.com/11188109/224582825-e17b840c-632e-40cc-98f4-68a9df2e1096.png)
+
+Untuk memperbaiki peluang ReLU yang menghasilkan nilai 0 sehingga membuat node mati. Maka diatasi dengan membuat nilai 0 memiliki nilai yang sangat-sangat kecil, sehingga tidak mematikan node neuron.
+```go
+func leaky_relu(x) {
+    if x >= 0 {
+        return x
+    } else {
+        return 0.01 * x
+    }
+}
+```
+
+### Sigmoid Function
+
+![image](https://user-images.githubusercontent.com/11188109/224583111-8cc1a636-1387-4d7c-8b53-a27163f9aac7.png)
+
+Memiliki hasil yang lebih baik daripada ReLU, hanya saja beban komputasinya tinggi. Fungsi sigmoid merupakan fungsi non linear yang berarti tidak memperlihatkan garis yagn lurus, tetapi berbeda di setiap titiknya.
+```go
+func sigmoid(x){
+    return 1 / (1 + Exp(-x))
+}
+```
+
+### Tanh
+
+![image](https://user-images.githubusercontent.com/11188109/224583222-d86a1bb9-4db2-4d09-9d8b-9c0c825b8386.png)
+
+Jika kita menginginkan fungsi sigmoid yang menghasilkan juga nilai negatif maka kita bisa menggunakan tanh.
+```go
+func tanh(x){
+  return 2 * (1 + Exp(-2*x)) - 1
+}
+```
+
+## Gradient descent
+
+![image](https://user-images.githubusercontent.com/11188109/224594608-c6536039-48c9-473e-8828-a584c8dfa037.png)
+
+m atau gradient bisa dinyatakan sebagai gradien atau turunan atau derifative
+
+## Kerjakan
+
+1. Buatlah neural network dengan banyak Layer NPM mod 7+3
