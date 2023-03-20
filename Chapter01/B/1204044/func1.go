@@ -1,15 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"io/ioutil"
+	"log"
 
-func func1(a int, b int) int {
-	c := a + b
-	return c
-}
+	. "gorgonia.org/gorgonia"
+)
 
 func main() {
-	a := 7
-	b := 14
-	c := func1(a, b)
-	fmt.Printf("%d + %d = %d\n", a, b, c)
+	g := NewGraph()
+
+	var a, b, c *Node
+	var err error
+
+	a = NewScalar(g, Float64, WithName("a"))
+	b = NewScalar(g, Float64, WithName("b"))
+	if c, err = Add(a, b); err != nil {
+		log.Fatal(err)
+	}
+
+	machine := NewTapeMachine(g)
+
+	Let(a, 1.0)
+	Let(b, 2.0)
+	machine.RunAll()
+
+	fmt.Printf("%v", c.Value())
+
+	ioutil.WriteFile("simple_graph1.dot", []byte(g.ToDot()), 0644)
 }

@@ -2,36 +2,50 @@ package main
 
 import (
 	"fmt"
-	"math"
+	"io/ioutil"
+
+	G "gorgonia.org/gorgonia"
+	"gorgonia.org/tensor"
 )
 
+// Deklarasikan fungsi main, dan inisiasi NewGraph() untuk deklarasi membuat graph komputasi
 func main() {
-	// set nilai n
-	n := 2.1957
 
-	// bulatkan n ke bilangan bulat terdekat
-	roundedN := int(math.Round(n))
+	g := G.NewGraph()
 
-	// buat matriks W dan vektor x dengan nilai acak
-	W := [][]float64{{1, 2}, {3, 4}}
-	x := []float64{2, 3}
+	matB := []float64{0.9, 0.7, 0.4, 0.2}
+	matT := tensor.New(tensor.WithBacking(matB), tensor.WithShape(2, 2))
+	mat := G.NewMatrix(g,
+		tensor.Float64,
+		G.WithName("W"),
+		G.WithShape(2, 2),
+		G.WithValue(matT),
+	)
 
-	// pastikan W dan x sesuai dengan ukuran n yang telah dibulatkan
-	if len(W) != roundedN || len(W[0]) != roundedN || len(x) != roundedN {
-		fmt.Println("Ukuran matriks atau vektor tidak sesuai dengan nilai n yang telah dibulatkan")
-		return
-	}
+	// deklarasi x dengan inisiasi bobot vecB
+	vecB := []float64{5, 7}
 
-	// hitung z menggunakan aturan perkalian matriks
-	var z []float64
-	for i := 0; i < roundedN; i++ {
-		var sum float64
-		for j := 0; j < roundedN; j++ {
-			sum += W[i][j] * x[j]
-		}
-		z = append(z, sum)
-	}
+	vecT := tensor.New(tensor.WithBacking(vecB), tensor.WithShape(2))
 
-	// tampilkan hasil
-	fmt.Println("z =", z)
+	vec := G.NewVector(g,
+		tensor.Float64,
+		G.WithName("x"),
+		G.WithShape(2),
+		G.WithValue(vecT),
+	)
+
+	//Definisikan fungsi z=Wx dalam graph komputasi gorgonia. Karena perkalian maka menggunakan rumus multification.
+	z, _ := G.Mul(mat, vec)
+
+	//Buat VM object agar bisa menjalankan model fungsi g yang dideklarasikan pada langkah 2.
+	machine := G.NewTapeMachine(g)
+
+	//Untuk menjalankan model maka gunakan method RunAll() dari variabel VM yang dibuat. Jangan lupa isi inisiasi inputan a dan b.
+	machine.RunAll()
+
+	//melihat hasil output
+	fmt.Println(z.Value().Data())
+
+	ioutil.WriteFile("simple_graph2.dot", []byte(g.ToDot()), 0644)
+
 }
