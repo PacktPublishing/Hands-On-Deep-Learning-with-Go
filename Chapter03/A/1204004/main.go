@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/gob"
 	"flag"
 	"fmt"
 	"image"
@@ -23,7 +24,7 @@ import (
 )
 
 var (
-	epochs     = flag.Int("epochs", 10, "Number of epochs to train for")
+	epochs     = flag.Int("epochs", 5, "Number of epochs to train for")
 	dataset    = flag.String("dataset", "train", "Which dataset to train on? Valid options are \"train\" or \"test\"")
 	dtype      = flag.String("dtype", "float64", "Which dtype to use")
 	batchsize  = flag.Int("batchsize", 100, "Batch size")
@@ -31,6 +32,7 @@ var (
 )
 
 const loc = "./mnist/"
+const backup = "./backup/"
 
 var dt tensor.Dtype
 
@@ -346,7 +348,11 @@ func main() {
 
 			img := visualizeRow(row)
 
-			f, _ := os.OpenFile(fmt.Sprintf("images/%d - %d output.jpg", b, j), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
+			f, err := os.OpenFile(fmt.Sprintf("images/%d - %d output.jpg", b, j), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
+			if err != nil {
+				fmt.Printf("\nError terjadi : %v \n", err)
+			}
+
 			jpeg.Encode(f, img, &jpeg.Options{jpeg.DefaultQuality})
 			f.Close()
 		}
@@ -354,6 +360,25 @@ func main() {
 		vm.Reset()
 		bar.Increment()
 	}
+
+	save(m)
+
 	log.Printf("Epoch Test | cost %v", costVal)
 
+}
+
+func save(model *nn) error {
+	f, err := os.Create(backup + "backup2.gob")
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	enc := gob.NewEncoder(f)
+	for _, node := range model.learnables() {
+		err := enc.Encode(node.Value())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
