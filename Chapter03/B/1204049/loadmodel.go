@@ -63,7 +63,7 @@ func (s sli) Step() int  { return 1 }
 func newNN(g *gorgonia.ExprGraph) *nn {
 	// Create node for w/weight
 
-	weight0, weight1, weight2, weight3, err := read(model + "model.gob")
+	weight0, weight1, weight2, weight3, err := readModel(model + "model.gob")
 	if err != nil {
 		panic(err)
 	}
@@ -296,7 +296,7 @@ func main() {
 	bar.Finish()
 }
 
-func read(file string) (w0 tensor.Dense, w1 tensor.Dense, w2 tensor.Dense, w3 tensor.Dense, err error) {
+func readModel(file string) (w0 tensor.Dense, w1 tensor.Dense, w2 tensor.Dense, w3 tensor.Dense, err error) {
 	f, err := os.Open(file)
 	if err != nil {
 		return
