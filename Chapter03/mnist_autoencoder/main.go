@@ -13,18 +13,16 @@ import (
 
 	_ "net/http/pprof"
 
+	"github.com/aiteung/mnist"
 	"github.com/pkg/errors"
 	"gorgonia.org/gorgonia"
-	"gorgonia.org/gorgonia/examples/mnist"
 	"gorgonia.org/tensor"
 
 	"time"
-
-	"gopkg.in/cheggaaa/pb.v1"
 )
 
 var (
-	epochs     = flag.Int("epochs", 100, "Number of epochs to train for")
+	epochs     = flag.Int("epochs", 10, "Number of epochs to train for")
 	dataset    = flag.String("dataset", "train", "Which dataset to train on? Valid options are \"train\" or \"test\"")
 	dtype      = flag.String("dtype", "float64", "Which dtype to use")
 	batchsize  = flag.Int("batchsize", 100, "Batch size")
