@@ -1,4 +1,4 @@
-module github.com/mayke111/ai/tree/master/Chapter01/A
+module github.com/mayke111/ai/tree/master/Chapter02/A
 
 go 1.20
 
