@@ -41,30 +41,18 @@ func newNN(g *gorgonia.ExprGraph) *nn {
 	w4 := gorgonia.NewMatrix(g,
 		tensor.Float64,
 		gorgonia.WithName("w4"),
-		gorgonia.WithShape(6, 1),
+		gorgonia.WithShape(6, 7),
 		gorgonia.WithInit(gorgonia.GlorotN(1.0)),
 	)
 	w5 := gorgonia.NewMatrix(g,
 		tensor.Float64,
 		gorgonia.WithName("w5"),
-		gorgonia.WithShape(1, 7),
-		gorgonia.WithInit(gorgonia.GlorotN(1.0)),
-	)
-	w6 := gorgonia.NewMatrix(g,
-		tensor.Float64,
-		gorgonia.WithName("w6"),
-		gorgonia.WithShape(7, 8),
-		gorgonia.WithInit(gorgonia.GlorotN(1.0)),
-	)
-	w7 := gorgonia.NewMatrix(g,
-		tensor.Float64,
-		gorgonia.WithName("w7"),
-		gorgonia.WithShape(8, 1),
+		gorgonia.WithShape(7, 1),
 		gorgonia.WithInit(gorgonia.GlorotN(1.0)),
 	)
 
 	// Create a slice of weight nodes
-	ws := []*gorgonia.Node{w1, w2, w3, w4, w5, w6, w7}
+	ws := []*gorgonia.Node{w1, w2, w3, w4, w5}
 
 	return &nn{
 		g:  g,
@@ -81,14 +69,11 @@ func (m *nn) fwd(x *gorgonia.Node) (err error) {
 	var l *gorgonia.Node = x
 
 	// Build network
-	for i := 0; i < len(m.ws)-2; i++ {
-		l = gorgonia.Must(gorgonia.Mul(l, m.ws[i]))
+	for _, w := range m.ws {
+		l = gorgonia.Must(gorgonia.Mul(l, w))
 		l = gorgonia.Must(gorgonia.Sigmoid(l))
 	}
 
-	l = gorgonia.Must(gorgonia.Mul(l, m.ws[len(m.ws)-2]))
-	l = gorgonia.Must(gorgonia.Sigmoid(l))
-	l = gorgonia.Must(gorgonia.Mul(l, m.ws[len(m.ws)-1]))
 	m.pred = l
 	gorgonia.Read(m.pred, &m.predVal)
 	return nil
@@ -114,40 +99,31 @@ func main() {
 
 	// Define validation data set
 	yB := []float64{0, 0, 1, 1}
-	yT := tensor.New(tensor.WithBacking(yB), tensor.WithShape(4, 1))
-	y := gorgonia.NewMatrix(g,
-		tensor.Float64,
-		gorgonia.WithName("y"),
-		gorgonia.WithShape(4, 1),
-		gorgonia.WithValue(yT),
-	)
-
-	// Run forward pass
-	if err := m.fwd(x); err != nil {
-		log.Fatalf("%+v", err)
-	}
-
-	// Calculate Cost w/MSE
-	losses := gorgonia.Must(gorgonia.Sub(y, m.pred))
-	square := gorgonia.Must(gorgonia.Square(losses))
-	cost := gorgonia.Must(gorgonia.Mean(square))
 
 	// Do Gradient updates
-	if _, err = gorgonia.Grad(cost, m.learnables()...); err != nil {
+ if _, err = gorgonia.Grad(cost, m.learnables()...); err != nil {
+	log.Fatal(err)
+}
+
+// Instantiate VM and Solver
+vm := gorgonia.NewTapeMachine(g, gorgonia.BindDualValues(m.learnables()...))
+solver := gorgonia.NewVanillaSolver(gorgonia.WithLearnRate(0.1))
+
+// Train
+for i := 0; i < 1000; i++ {
+	if err = vm.RunAll(); err != nil {
 		log.Fatal(err)
 	}
 
-	// Instantiate VM and Solver
-	vm := gorgonia.NewTapeMachine(g, gorgonia.BindDualValues(m.learnables()...))
-	solver := gorgonia.NewVanillaSolver(gorgonia.WithLearnRate(1.0))
-
-	for i := 0; i < 10000; i++ {
-		vm.Reset()
-		if err = vm.RunAll(); err != nil {
-			log.Fatalf("Failed at inter  %d: %v", i, err)
-		}
-		solver.Step(gorgonia.NodesToValueGrads(m.learnables()))
-		vm.Reset()
+	if err = solver.Step(gorgonia.NodesToValueGrads(m.learnables())); err != nil {
+		log.Fatal(err)
 	}
-	fmt.Println("\n\nOutput after Training: \n", m.predVal)
+	vm.Reset()
 }
+
+// Predict
+if err = m.fwd(x); err != nil {
+	log.Fatalf("fwd failed: %+v", err)
+}
+
+fmt.Printf("Prediction: %v\n", m.predVal)
