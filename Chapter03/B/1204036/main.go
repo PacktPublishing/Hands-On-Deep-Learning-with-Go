@@ -338,7 +338,7 @@ func main() {
 }
 
 func save(model *nn) error {
-	f, err := os.Create(backup + "backup1.gob")
+	f, err := os.Create(backup + "backup10.gob")
 	if err != nil {
 		return err
 	}
