@@ -129,6 +129,6 @@ Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https
 | 1204069   | Grifaldi Alfiandra | 0 | 0 | 0 | 0 |  |  |
 | 1204071   | Guna Dharma | 100 | 100 | 100 | 80 |  |  |
 | 1204075   | Fathur Abdul Halim | 0 | 0 | 0 | 0 |  |  |
-| 1204076   | Rifqi Fathurrohman | 0 | 0 | 0 | 0 |  |  |
+| 1204076   | Rifqi Fathurrohman | 100 | 100 | 100 | 100 |  |  |
 | 1204077   | Bachtiar Ramadhan | 100 | 100 | 100 | 100 |  |  |
 
