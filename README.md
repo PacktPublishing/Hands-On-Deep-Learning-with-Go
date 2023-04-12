@@ -27,6 +27,9 @@ If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1789
 <a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
 alt="https://www.packtpub.com/" border="5" /></a>
 
+
+
+
 ## Instructions and Navigations
 All of the code is organized into folders. For example, Chapter02.
 
@@ -78,3 +81,37 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
  <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
 <p align="center"> <a href="https://packt.link/free-ebook/9781789340990">https://packt.link/free-ebook/9781789340990 </a> </p>
+
+
+# Kuliah AI
+Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https://github.com/bukped/ai/)
+
+
+## Daftar Nilai 
+
+| NPM      | Nama | 1 | 2 | 3 | 4 |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| 1214001      | MARJUNIATI PUTRI | 50 | 0 | 0  |  |  | |
+| 1214002   | Ludha Hardeka | 100 | 0 | 0 |  |  | |
+| 1214003   | Ardiva Putri Tava P | 100 | 0 | 0 |  |  |  |
+| 1214005   | Muhammad Rafi Al Azhim | 100 | 0 | 30 |  |  |  |
+| 1214007   | Ratu SukmaKomala | 100 | 0 | 85 |  |  |  |
+| 1214008   | Muhammad Syahid Al Fajri | 100 | 0 | 0 |  |  |  |
+| 1214010   | shahiezaalfadiashauqie | 100 | 90 |  |  |  |  |
+| 1214011   | Daslan Josua Valentino Siahaan | 50 | 0 | 0 |  |  |  |
+| 1214012   | Jasmine Mutiara Bintang | 100 | 60 | 85 |  |  |  |
+| 1214015   | Daffa Audya Pramana |  |  | 100 |  |  |  |
+| 1214017   | Rofi Nafiis Zain | 100 | 100 | 95 |  |  | 100 |
+| 1214020   | Farhan Rizki M | 100 | 0 | 0 |  |  |  |
+| 1214022   | Gilar Wahibul Azhar | 100 | 0 | 100 |  |  |  |
+| 1214024   | Farhan Riziq | 50 | 0 | 0 |  |  |  |  |
+| 1214027   | Gabriella Youzanna Rorong | 100 | 90 | 100 |  |  |  |
+| 1214030   | Fahad Abdul Aziz | 100 | 0 | 0 |  |  |  |
+| 1214033   | Isnaenti Nur Latifah | 100 | 0 | 0 |  |  |  |
+| 1214041   | Muhammad Faisal Ashshidiq | 50 | 60 | 0 |  |  |  |
+| 1214047   | Haris Riyoni | 100 | 80 | 0 |  |  |  |
+| 1214061   | NIZAR.ABDUL.KHOLIQ | 100 | 90 | 0 |  |  |  |
+| 1214076   | Ryaas Ishlah Ramadhan | 100 | 90 | 0 |  |  |  |
+
+
+
