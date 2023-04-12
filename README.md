@@ -87,7 +87,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https://github.com/bukped/ai/)
 
 
-## Daftar Nilai 
+## Daftar Nilai 3A
 
 | NPM      | Nama | 1 | 2 | 3 | 4 | 5 | 6 |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
@@ -100,14 +100,14 @@ Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https
 | 1204004   | Jose Chasey Pratama | 100 | 100 | 100 | 100 |  |  |
 | 1204007   | Wulan Nur Annisah | 100 | 0 | 0 | 0 |  |  |
 | 1204008   | Anggina Syarif | 0 | 0 | 0 | 0 |  |  |
-| 1204009   | Dani Rahman Hasibuan | 0 | 0 | 0 | 0 |  |  |
+| 1204009   | Dani Rahman Hasibuan | 100 | 80 | 50 | 50 |  |  |
 | 1204010   | Azhari Hasibuan | 0 | 0 | 0 | 0 |  |  |
 | 1204011   | Wildan Azril Arvany | 100 | 100 | 100 | 100 |  |  |
 | 1204013   | Fauziah Henni Hasibuan | 100 | 100 | 100 | 100 |  |  |
 | 1204014   | Anita Alfi Syahra | 0 | 0 | 0 | 0 |  |  |
-| 1204016   | Dani Ardika Rahmadani | 0 | 0 | 0 | 0 |  |  |  |
+| 1204016   | Dani Ardika Rahmadani | 100 | 80 | 80 | 100 |  |  |  |
 | 1204017   | Surahmat | 100 | 100 | 100 | 100 |  |  |
-| 1204019   | Adli Gunawan Bastin | 0 | 0 | 0 | 0 |  |  |
+| 1204019   | Adli Gunawan Bastin | 80 | 80 | 50 | 50 |  |  |
 | 1204021   | Mayke Andani Rohmaniar | 100 | 100 | 100 | 100 |  |  |
 | 1204022   | Hanan Destiarin Kishendrian | 100 | 100 | 100 | 100 |  |  |
 | 1204025   | Christian Yuda Pratama | 100 | 80 | 100 | 100 |  |  |
