@@ -1,4 +1,4 @@
-module github.com/bukped/ai/Chapter02/B/1204044
+module github.com/bukped/ai/Chapter02/A/1204027
 
 go 1.20
 
