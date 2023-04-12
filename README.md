@@ -27,6 +27,9 @@ If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1789
 <a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
 alt="https://www.packtpub.com/" border="5" /></a>
 
+
+
+
 ## Instructions and Navigations
 All of the code is organized into folders. For example, Chapter02.
 
@@ -78,3 +81,54 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
  <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
 <p align="center"> <a href="https://packt.link/free-ebook/9781789340990">https://packt.link/free-ebook/9781789340990 </a> </p>
+
+
+# Kuliah AI
+Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https://github.com/bukped/ai/)
+
+
+## Daftar Nilai 3A
+
+| NPM      | Nama | 1 | 2 | 3 | 4 | 5 | 6 |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| 1194001      | Ade Ilham Permadi | 0 | 0 | 0  | 0 |  | |
+| 1194038   | Alvaro Daniel Bamba | 0 | 0 | 0 | 0 |  | |
+| 1194046   | Ilham Ambar Rochmat | 0 | 0 | 0 | 0|  |  |
+| 1194047   | Linggo Prasetyo | 0 | 0 | 0 | 0 |  |  |
+| 1194049   | M. Hadi Syatiri | 0 | 0 | 0 | 0 |  |  |
+| 1204003   | Kholida Magfirah | 100 | 0 | 0 | 0 |  |  |
+| 1204004   | Jose Chasey Pratama | 100 | 100 | 100 | 100 |  |  |
+| 1204007   | Wulan Nur Annisah | 100 | 0 | 0 | 0 |  |  |
+| 1204008   | Anggina Syarif | 0 | 0 | 0 | 0 |  |  |
+| 1204009   | Dani Rahman Hasibuan | 20 | 20 | 20 | 20 |  |  |
+| 1204010   | Azhari Hasibuan | 0 | 0 | 0 | 0 |  |  |
+| 1204011   | Wildan Azril Arvany | 100 | 100 | 100 | 100 |  |  |
+| 1204013   | Fauziah Henni Hasibuan | 100 | 100 | 100 | 100 |  |  |
+| 1204014   | Anita Alfi Syahra | 0 | 0 | 0 | 0 |  |  |
+| 1204016   | Dani Ardika Rahmadani | 20 | 20 | 20 | 20 |  |  |  |
+| 1204017   | Surahmat | 100 | 100 | 100 | 100 |  |  |
+| 1204019   | Adli Gunawan Bastin | 20 | 20 | 20 | 20 |  |  |
+| 1204021   | Mayke Andani Rohmaniar | 100 | 100 | 100 | 100 |  |  |
+| 1204022   | Hanan Destiarin Kishendrian | 100 | 100 | 100 | 100 |  |  |
+| 1204025   | Christian Yuda Pratama | 100 | 80 | 100 | 100 |  |  |
+| 1204026   | Haryadi Yusuf | 100 | 100 | 100 | 100 |  |  |
+| 1204027   | Mustika Tiara Triani Br.Sirait | 100 | 90 | 0 | 0 |  |  |
+
+## Daftar Nilai 3C
+
+| NPM      | Nama | 1 | 2 | 3 | 4 | 5 | 6 |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| 1204056      | Rakasona | 100 | 100 | 100  | 100 |  | |
+| 1204057   | Zidan Alamsyah Amir | 100 | 100 | 100 | 80 |  | |
+| 1204058   | Bimo Arga Dewantoro | 0 | 0 | 0 | 0|  |  |
+| 1204060   | Valen Rionald | 100 | 100 | 100 | 80 |  |  |
+| 1204061   | Nur Tri Ramadhanti Adiningrum | 100 | 100 | 100 | 100 |  |  |
+| 1204062   | Argya Rijal Rafi | 100 | 80 | 100 | 100 |  |  |
+| 1204063   | Algies Rifkha Fadillah | 100 | 100 | 100 | 100 |  |  |
+| 1204068   | Hasna Zahidah | 100 | 100 | 100 | 100 |  |  |
+| 1204069   | Grifaldi Alfiandra | 0 | 0 | 0 | 0 |  |  |
+| 1204071   | Guna Dharma | 100 | 100 | 100 | 80 |  |  |
+| 1204075   | Fathur Abdul Halim | 0 | 0 | 0 | 0 |  |  |
+| 1204076   | Rifqi Fathurrohman | 100 | 100 | 100 | 100 |  |  |
+| 1204077   | Bachtiar Ramadhan | 100 | 100 | 100 | 100 |  |  |
+
