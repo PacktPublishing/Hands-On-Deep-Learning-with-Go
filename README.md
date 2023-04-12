@@ -100,7 +100,7 @@ Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https
 | 1204004   | Jose Chasey Pratama | 100 | 100 | 100 | 100 |  |  |
 | 1204007   | Wulan Nur Annisah | 100 | 0 | 0 | 0 |  |  |
 | 1204008   | Anggina Syarif | 0 | 0 | 0 | 0 |  |  |
-| 1204009   | Dani Rahman Hasibuan | 0 | 0 | 0 |  |  |  |
+| 1204009   | Dani Rahman Hasibuan | 0 | 0 | 0 | 0 |  |  |
 | 1204010   | Azhari Hasibuan | 0 | 0 | 0 | 0 |  |  |
 | 1204011   | Wildan Azril Arvany | 100 | 100 | 100 | 100 |  |  |
 | 1204013   | Fauziah Henni Hasibuan | 100 | 100 | 100 | 100 |  |  |
