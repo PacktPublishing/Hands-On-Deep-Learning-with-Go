@@ -119,11 +119,11 @@ Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https
 | NPM      | Nama | 1 | 2 | 3 | 4 | 5 | 6 |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | 1204056      | Rakasona | 100 | 100 | 100  | 100 |  | |
-| 1204057   | Zidan Alamsyah Amir | 100 | 100 | 100 | 100 |  | |
+| 1204057   | Zidan Alamsyah Amir | 100 | 100 | 100 | 80 |  | |
 | 1204058   | Bimo Arga Dewantoro | 0 | 0 | 0 | 0|  |  |
 | 1204060   | Valen Rionald | 100 | 100 | 100 | 80 |  |  |
 | 1204061   | Nur Tri Ramadhanti Adiningrum | 100 | 100 | 100 | 100 |  |  |
-| 1204062   | Argya Rijal Rafi | 100 | 0 | 0 | 0 |  |  |
+| 1204062   | Argya Rijal Rafi | 100 | 80 | 100 | 100 |  |  |
 | 1204063   | Algies Rifkha Fadillah | 100 | 100 | 100 | 100 |  |  |
 | 1204068   | Hasna Zahidah | 100 | 100 | 100 | 100 |  |  |
 | 1204069   | Grifaldi Alfiandra | 0 | 0 | 0 | 0 |  |  |
