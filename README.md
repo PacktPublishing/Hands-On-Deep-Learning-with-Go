@@ -94,25 +94,25 @@ Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https
 | 1194001      | Ade Ilham Permadi | 0 | 0 | 0  | 0 |  | |
 | 1194038   | Alvaro Daniel Bamba | 0 | 0 | 0 | 0 |  | |
 | 1194046   | Ilham Ambar Rochmat | 0 | 0 | 0 | 0|  |  |
-| 1194047   | Linggo Prasetyo | 0 | 0 | 0 |  |  |  |
-| 1194049   | M. Hadi Syatiri | 0 | 0 | 0 |  |  |  |
+| 1194047   | Linggo Prasetyo | 0 | 0 | 0 | 0 |  |  |
+| 1194049   | M. Hadi Syatiri | 0 | 0 | 0 | 0 |  |  |
 | 1204003   | Kholida Magfirah | 100 | 0 | 0 | 0 |  |  |
 | 1204004   | Jose Chasey Pratama | 100 | 100 | 100 | 100 |  |  |
 | 1204007   | Wulan Nur Annisah | 100 | 0 | 0 | 0 |  |  |
-| 1204008   | Anggina Syarif | 0 | 60 | 0 |  |  |  |
-| 1204009   | Dani Rahman Hasibuan | 0 |  | 0 |  |  |  |
-| 1204010   | Azhari Hasibuan | 0 |  | 0 |  |  |  |
+| 1204008   | Anggina Syarif | 0 | 0 | 0 | 0 |  |  |
+| 1204009   | Dani Rahman Hasibuan | 0 | 0 | 0 |  |  |  |
+| 1204010   | Azhari Hasibuan | 0 | 0 | 0 | 0 |  |  |
 | 1204011   | Wildan Azril Arvany | 100 | 100 | 100 | 100 |  |  |
 | 1204013   | Fauziah Henni Hasibuan | 100 | 100 | 100 | 100 |  |  |
-| 1204014   | Anita Alfi Syahra | 0 | 0 | 0 |  |  |  |
-| 1204016   | Dani Ardika Rahmadani | 0 | 0 | 0 |  |  |  |  |
-| 1204017   | Surahmat | 100 | 100 | 100 |  |  |  |
-| 1204019   | Adli Gunawan Bastin | 0 | 0 | 0 |  |  |  |
+| 1204014   | Anita Alfi Syahra | 0 | 0 | 0 | 0 |  |  |
+| 1204016   | Dani Ardika Rahmadani | 0 | 0 | 0 | 0 |  |  |  |
+| 1204017   | Surahmat | 100 | 100 | 100 | 100 |  |  |
+| 1204019   | Adli Gunawan Bastin | 0 | 0 | 0 | 0 |  |  |
 | 1204021   | Mayke Andani Rohmaniar | 100 | 100 | 100 | 100 |  |  |
 | 1204022   | Hanan Destiarin Kishendrian | 100 | 100 | 100 | 100 |  |  |
 | 1204025   | Christian Yuda Pratama | 100 | 80 | 100 | 100 |  |  |
 | 1204026   | Haryadi Yusuf | 100 | 100 | 100 | 100 |  |  |
-| 1204027   | Mustika Tiara Triani Br.Sirait | 100 | 90 | 0 |  |  |  |
+| 1204027   | Mustika Tiara Triani Br.Sirait | 100 | 90 | 0 | 0 |  |  |
 
 
 
