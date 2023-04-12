@@ -89,8 +89,8 @@ Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https
 
 ## Daftar Nilai 
 
-| NPM      | Nama | 1 | 2 | 3 | 4 |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| NPM      | Nama | 1 | 2 | 3 | 4 | 5 | 6 |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | 1214001      | MARJUNIATI PUTRI | 50 | 0 | 0  |  |  | |
 | 1214002   | Ludha Hardeka | 100 | 0 | 0 |  |  | |
 | 1214003   | Ardiva Putri Tava P | 100 | 0 | 0 |  |  |  |
@@ -112,6 +112,4 @@ Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https
 | 1214047   | Haris Riyoni | 100 | 80 | 0 |  |  |  |
 | 1214061   | NIZAR.ABDUL.KHOLIQ | 100 | 90 | 0 |  |  |  |
 | 1214076   | Ryaas Ishlah Ramadhan | 100 | 90 | 0 |  |  |  |
-
-
 
