@@ -100,19 +100,35 @@ Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https
 | 1204004   | Jose Chasey Pratama | 100 | 100 | 100 | 100 |  |  |
 | 1204007   | Wulan Nur Annisah | 100 | 0 | 0 | 0 |  |  |
 | 1204008   | Anggina Syarif | 0 | 0 | 0 | 0 |  |  |
-| 1204009   | Dani Rahman Hasibuan | 100 | 80 | 50 | 50 |  |  |
+| 1204009   | Dani Rahman Hasibuan | 20 | 20 | 20 | 20 |  |  |
 | 1204010   | Azhari Hasibuan | 0 | 0 | 0 | 0 |  |  |
 | 1204011   | Wildan Azril Arvany | 100 | 100 | 100 | 100 |  |  |
 | 1204013   | Fauziah Henni Hasibuan | 100 | 100 | 100 | 100 |  |  |
 | 1204014   | Anita Alfi Syahra | 0 | 0 | 0 | 0 |  |  |
-| 1204016   | Dani Ardika Rahmadani | 100 | 80 | 80 | 100 |  |  |  |
+| 1204016   | Dani Ardika Rahmadani | 20 | 20 | 20 | 20 |  |  |  |
 | 1204017   | Surahmat | 100 | 100 | 100 | 100 |  |  |
-| 1204019   | Adli Gunawan Bastin | 80 | 80 | 50 | 50 |  |  |
+| 1204019   | Adli Gunawan Bastin | 20 | 20 | 20 | 20 |  |  |
 | 1204021   | Mayke Andani Rohmaniar | 100 | 100 | 100 | 100 |  |  |
 | 1204022   | Hanan Destiarin Kishendrian | 100 | 100 | 100 | 100 |  |  |
 | 1204025   | Christian Yuda Pratama | 100 | 80 | 100 | 100 |  |  |
 | 1204026   | Haryadi Yusuf | 100 | 100 | 100 | 100 |  |  |
 | 1204027   | Mustika Tiara Triani Br.Sirait | 100 | 90 | 0 | 0 |  |  |
 
+## Daftar Nilai 3C
 
+| NPM      | Nama | 1 | 2 | 3 | 4 | 5 | 6 |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| 1204056      | Rakasona | 100 | 100 | 100  | 100 |  | |
+| 1204057   | Zidan Alamsyah Amir | 100 | 100 | 100 | 80 |  | |
+| 1204058   | Bimo Arga Dewantoro | 0 | 0 | 0 | 0|  |  |
+| 1204060   | Valen Rionald | 100 | 100 | 100 | 80 |  |  |
+| 1204061   | Nur Tri Ramadhanti Adiningrum | 100 | 100 | 100 | 100 |  |  |
+| 1204062   | Argya Rijal Rafi | 100 | 80 | 100 | 100 |  |  |
+| 1204063   | Algies Rifkha Fadillah | 100 | 100 | 100 | 100 |  |  |
+| 1204068   | Hasna Zahidah | 100 | 100 | 100 | 100 |  |  |
+| 1204069   | Grifaldi Alfiandra | 0 | 0 | 0 | 0 |  |  |
+| 1204071   | Guna Dharma | 100 | 100 | 100 | 80 |  |  |
+| 1204075   | Fathur Abdul Halim | 0 | 0 | 0 | 0 |  |  |
+| 1204076   | Rifqi Fathurrohman | 0 | 0 | 0 | 0 |  |  |
+| 1204077   | Bachtiar Ramadhan | 100 | 100 | 100 | 100 |  |  |
 
