@@ -89,9 +89,9 @@ Materi Kuliah AI, akses github : [https://universitas.bukupedia.co.id/ws/](https
 
 ## Daftar Nilai 
 
-| NPM      | Nama | 1 | 2 | 3 | 4 | 5 | 6 |
+| NPM      | Nama | 1 | 2 | 3 | 4 |  |  |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| 1214001      | MARJUNIATI PUTRI | 50 | 0 | 0  |  |  | |
+| 1214001   | MARJUNIATI PUTRI | 50 | 0 | 0  |  |  | |
 | 1214002   | Ludha Hardeka | 100 | 0 | 0 |  |  | |
 | 1214003   | Ardiva Putri Tava P | 100 | 0 | 0 |  |  |  |
 | 1214005   | Muhammad Rafi Al Azhim | 100 | 0 | 30 |  |  |  |
