@@ -9,3 +9,11 @@ Tugas :
 * ambil salah satu dari chapter 1-5 dipilih dan dimodifikasi dengan dataset sendiri 
 * Tambahkan latihan penanganan error
 
+Kumpulkan dalam bentuk link url spreadsheet bukupedia : dengan format
+
+Kelas A
+
+Kelas B
+1. Nama | NPM | Link
+
+Kelas C
