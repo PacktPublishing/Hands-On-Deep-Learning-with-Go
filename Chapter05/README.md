@@ -11,9 +11,9 @@ Tugas :
 
 Kumpulkan dalam bentuk link url spreadsheet bukupedia : dengan format
 
-Kelas A
+## Kelas A
 
-Kelas B
+## Kelas B
 1. Nama | NPM | Link
 
-Kelas C
+## Kelas C
