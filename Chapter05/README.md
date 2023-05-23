@@ -13,7 +13,7 @@ Tugas :
 Kumpulkan dalam bentuk link url spreadsheet bukupedia : dengan format
 
 Untuk tugas video sesuaikan dengan aturan [ini](https://kampus.awangga.net/standar/standar-konten-bukupedia-university)
-Video diunggah ke channel bukupedia university
+Video diunggah ke channel bukupedia university, URL video langsung di list di bawah ini
 ## Kelas A
 
 ## Kelas B
