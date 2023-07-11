@@ -6,7 +6,7 @@ Menerbitkan buku dengan topik :
 * data preprosesing di golang
 * machine learning di golang
 
-1 buku berisi 1-5 orang, format bukupedia diterbitkan sampai selesai keluar nomor surat penyerahan karya dari bapusipda jabar.
+buku berisi 1-5 orang, format bukupedia diterbitkan sampai selesai keluar nomor surat penyerahan karya dari bapusipda jabar.
 
 ## Pengumpulan di list di bawah ini melalui pull request
 
