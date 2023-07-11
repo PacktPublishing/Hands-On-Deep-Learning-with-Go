@@ -20,3 +20,5 @@ Video diunggah ke channel bukupedia university, URL video langsung di list di ba
 1. Nama | NPM | Link
 
 ## Kelas C
+1. Nur Tri Ramadhanti Adiningrum | NPM | https://youtu.be/fW5chlTnxL0
+
