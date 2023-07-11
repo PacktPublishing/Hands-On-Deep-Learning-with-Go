@@ -18,3 +18,5 @@ buku berisi 1-5 orang, format bukupedia diterbitkan sampai selesai keluar nomor 
 
 ### Kelas C
 1. NPM , Nama , Judul Buku,ISBN, No. SKT
+
+Maksimal Submit Buku Jumat 14 Juli 2023
